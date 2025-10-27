@@ -1,0 +1,160 @@
+/* ==========================================
+   PAGE HERO SECTIONS
+   Reusable hero sections for internal pages
+   ========================================== */
+
+/* ========== Page Hero Base ========== */
+.page-hero {
+  position: relative;
+  padding-top: 140px;
+  padding-bottom: 4rem;
+  background-color: #000000; /* Solid black background */
+  color: var(--color-text-light);
+  overflow: hidden;
+}
+
+/* ========== Page Hero Gradient Overlay (Fade from Navbar) ========== */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  /* Gradient overlay: black at top fading to transparent */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.95) 20%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ========== Page Hero Content ========== */
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.page-hero-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-light);
+  opacity: 0;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s forwards;
+}
+
+.page-hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}
+
+/* ========== Page Content Gradient Transition (After Page Hero) ========== */
+.page-content-transition {
+  position: relative;
+  background-color: transparent;
+  height: 400px;
+  margin-top: -1px; /* Eliminate gap */
+}
+
+.page-content-transition::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient: black to white for smooth transition */
+  background: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.95) 10%,
+    rgba(0, 0, 0, 0.85) 20%,
+    rgba(50, 50, 50, 0.7) 35%,
+    rgba(100, 100, 100, 0.5) 50%,
+    rgba(150, 150, 150, 0.4) 65%,
+    rgba(200, 200, 200, 0.25) 80%,
+    rgba(255, 255, 255, 0.1) 90%,
+    rgb(255, 255, 255) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ========== Bottom CTA Section with Gradient (Before Footer) ========== */
+.bottom-cta-section {
+  position: relative;
+  background-color: #000000;
+  color: var(--color-text-light);
+  overflow: hidden;
+}
+
+.bottom-cta-section .cta-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255) 0%,
+    rgba(255, 255, 255, 0.95) 15%,
+    rgba(255, 255, 255, 0.85) 25%,
+    rgba(255, 255, 255, 0.7) 35%,
+    rgba(200, 200, 200, 0.6) 45%,
+    rgba(150, 150, 150, 0.5) 55%,
+    rgba(100, 100, 100, 0.4) 65%,
+    rgba(50, 50, 50, 0.3) 75%,
+    rgba(0, 0, 0, 0.15) 85%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bottom-cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========== Responsive Page Hero ========== */
+@media (max-width: 768px) {
+  .page-hero {
+    padding-top: 100px;
+    padding-bottom: 3rem;
+  }
+
+  .page-hero-title {
+    font-size: 2rem;
+  }
+
+  .page-hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .page-content-transition {
+    height: 300px;
+  }
+
+  .bottom-cta-section .cta-gradient-overlay {
+    height: 300px;
+  }
+}
+
+/* ========== Reduced Motion Support ========== */
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-title,
+  .page-hero-subtitle {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}

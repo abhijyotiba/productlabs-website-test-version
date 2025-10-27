@@ -1,0 +1,124 @@
+/* ==========================================
+   TYPOGRAPHY
+   Font styles, headings, and text utilities
+   ========================================== */
+
+/* ========== Font Import ========== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ========== Heading Styles ========== */
+.heading-hero {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heading-xl {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.heading-lg {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.heading-md {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.heading-sm {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ========== Text Size Utilities ========== */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+
+/* ========== Font Weight Utilities ========== */
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+/* ========== Text Color Utilities ========== */
+.text-dark { color: var(--color-text-dark); }
+.text-light { color: var(--color-text-light); }
+.text-muted { color: var(--color-text-muted); }
+.text-white { color: var(--color-bg-white); }
+
+/* ========== Text Alignment ========== */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* ========== Line Height Utilities ========== */
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+.leading-loose { line-height: var(--line-height-loose); }
+
+/* ========== Letter Spacing ========== */
+.tracking-tight { letter-spacing: -0.02em; }
+.tracking-normal { letter-spacing: 0; }
+.tracking-wide { letter-spacing: 0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+
+/* ========== Text Transform ========== */
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+
+/* ========== Text Decoration ========== */
+.underline { text-decoration: underline; }
+.no-underline { text-decoration: none; }
+
+/* ========== Section Titles ========== */
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #666666;
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.7;
+}
+
+/* ========== Gradient Text ========== */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-text-dark), var(--color-gray-600));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== Responsive Typography ========== */
+@media (max-width: 768px) {
+  .heading-hero {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: var(--font-size-base);
+  }
+}

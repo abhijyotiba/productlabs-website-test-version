@@ -1,0 +1,445 @@
+/* ==========================================
+   PRODUCT LABS - MAIN STYLESHEET
+   Modular CSS Architecture
+   Import order matters!
+   ========================================== */
+
+/* ========== Base Styles ========== */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/typography.css';
+
+/* ========== Layout ========== */
+@import './layout/layout.css';
+@import './layout/navbar.css';
+@import './layout/footer.css';
+
+/* ========== Components ========== */
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/carousel-enhanced.css';
+
+/* ========== Sections ========== */
+@import './sections/cta.css';
+@import './sections/page-hero.css';
+@import './sections/technology-works.css';
+
+/* ========== Animations ========== */
+@import './animations.css';
+
+/* ==========================================
+   CUSTOM COMPONENT STYLES
+   Specific component styles not in modules
+   ========================================== */
+
+/* ========== Hero Section ========== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.hero-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Enhanced opacity and grayscale filter for better readability */
+  opacity: 0.5;
+  filter: grayscale(100%) brightness(0.7);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Enhanced gradient overlay: darker for better contrast */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.75) 40%,
+    rgba(0, 0, 0, 0.6) 70%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--color-text-light);
+  padding: 4rem 2rem;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  /* Entrance animation: fade in + move up */
+  opacity: 0;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s forwards;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Entrance animation: fade in + move up with delay */
+  opacity: 0;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* Entrance animation: fade in + move up with delay */
+  opacity: 0;
+  animation: heroFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.45s forwards;
+}
+
+/* Hero entrance animation keyframes */
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Product Carousel ========== */
+.product-carousel {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  padding: 3rem 0;
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-card {
+  position: absolute;
+  width: 420px;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.5;
+  transform: scale(0.85);
+  z-index: 1;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.carousel-card.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 3;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-card.prev {
+  transform: translateX(-120%) scale(0.85);
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.carousel-card.next {
+  transform: translateX(120%) scale(0.85);
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.carousel-card-image-wrapper {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #1a1a1a;
+  position: relative;
+}
+
+.carousel-card-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.carousel-card:hover .carousel-card-image-wrapper::before {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.carousel-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 0;
+}
+
+.carousel-card:hover .carousel-card-image {
+  transform: scale(1.08);
+}
+
+.carousel-card-content {
+  padding: 2rem;
+}
+
+.carousel-card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 1rem;
+  text-align: left;
+  letter-spacing: -0.02em;
+}
+
+.carousel-card-description {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.feature-tag {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background: #f5f5f5;
+  color: #333333;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.carousel-card:hover .feature-tag {
+  background: #e8e8e8;
+  border-color: #cccccc;
+  transform: translateY(-2px);
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.carousel-btn,
+.carousel-btn-prev,
+.carousel-btn-next {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  color: white;
+  border: 2px solid #404040;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-btn-prev {
+  left: -60px;
+}
+
+.carousel-btn-next {
+  right: -60px;
+}
+
+.carousel-btn:hover,
+.carousel-btn-prev:hover,
+.carousel-btn-next:hover {
+  transform: translateY(-50%) scale(1.15);
+  background: #1a1a1a;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: #555555;
+}
+
+/* ========== Forms ========== */
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-dark);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  transition: all var(--transition-base);
+  background-color: var(--color-bg-white);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-text-dark);
+  box-shadow: 0 0 0 3px rgba(63, 63, 63, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ========== Responsive Adjustments ========== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .carousel-card {
+    width: 320px;
+  }
+  
+  .carousel-card-image-wrapper {
+    height: 200px;
+  }
+  
+  .carousel-card-content {
+    padding: 1.5rem;
+  }
+  
+  .carousel-card-title {
+    font-size: 1.4rem;
+  }
+  
+  .carousel-card-description {
+    font-size: 0.875rem;
+  }
+  
+  .carousel-card.prev,
+  .carousel-card.next {
+    transform: scale(0.7);
+    opacity: 0.3;
+  }
+  
+  .carousel-btn-prev {
+    left: -10px;
+  }
+  
+  .carousel-btn-next {
+    right: -10px;
+  }
+  
+  .carousel-btn-prev,
+  .carousel-btn-next {
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+  }
+  
+  /* Fix for responsive grids in pages */
+  section [style*="grid-template-columns: 1fr 1fr"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ========== Utility Classes for Common Patterns ========== */
+.responsive-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .responsive-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

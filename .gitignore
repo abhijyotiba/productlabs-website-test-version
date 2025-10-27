@@ -1,0 +1,290 @@
+# ==========================================
+# Product Labs Website - .gitignore
+# Files to exclude from git and deployment
+# ==========================================
+
+# ========== Documentation Files (Not needed for deployment) ==========
+*.md
+!README.md
+ARCHITECTURE.md
+ASSET_REORGANIZATION.md
+TECHNOLOGY_WORKS_IMPLEMENTATION.md
+TECHNOLOGY_WORKS_VISUAL_GUIDE.md
+IMPLEMENTATION_COMPLETE.md
+QUICK_REFERENCE.md
+SIZE_OPTIMIZATION_SUMMARY.md
+VISUAL_SIZE_COMPARISON.md
+SECTION_PADDING_BUTTON_FIX.md
+BUTTON_POSITIONING_VISUAL.md
+COMPLETE_OPTIMIZATION_CHANGELOG.md
+
+# ========== Development/Reference Folder ==========
+wrlds-ai-integration-7724-main/
+
+# ========== Operating System Files ==========
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ========== IDE / Editor Files ==========
+# Visual Studio Code
+.vscode/
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ========== Node.js (if you add npm later) ==========
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.npm
+.yarn/
+.pnp.*
+
+# ========== Build/Cache Files ==========
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+out/
+.nuxt/
+.vuepress/dist
+.temp/
+.rpt2_cache/
+.eslintcache
+.stylelintcache
+
+# ========== Logs ==========
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# ========== Environment Variables ==========
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.backup
+
+# ========== Testing ==========
+coverage/
+*.lcov
+.nyc_output
+.grunt
+lib-cov
+
+# ========== Temporary Files ==========
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*-backup.*
+*-old.*
+tmp/
+temp/
+
+# ========== Compiled Files ==========
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ========== Compressed Files (source) ==========
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ========== Database Files ==========
+*.sql
+*.sqlite
+*.db
+
+# ========== Version Control ==========
+.git/
+.svn/
+.hg/
+.bzr/
+
+# ========== Deployment Files ==========
+.htaccess.backup
+.htpasswd
+deploy.sh
+deploy.bat
+deployment-config.json
+
+# ========== Security/Sensitive Files ==========
+*.key
+*.pem
+*.cert
+*.crt
+*.der
+config/secrets.*
+secrets/
+credentials/
+private/
+
+# ========== Large Media Files (optional - comment out if needed) ==========
+# Uncomment these if you want to exclude large video files from git
+# *.mp4
+# *.mov
+# *.avi
+# *.wmv
+# *.flv
+# *.webm
+
+# ========== Backup Files ==========
+*-backup/
+backup/
+backups/
+*.backup.*
+
+# ========== PHP (if you use PHP later) ==========
+vendor/
+composer.lock
+composer.phar
+
+# ========== Python (if you use Python scripts) ==========
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+ENV/
+
+# ========== Ruby (if you use Ruby/Jekyll) ==========
+.bundle/
+.sass-cache/
+_site/
+Gemfile.lock
+
+# ========== Static Site Generators ==========
+.hugo/
+.jekyll-cache/
+.jekyll-metadata
+
+# ========== Package Manager Directories ==========
+bower_components/
+jspm_packages/
+
+# ========== TypeScript ==========
+*.tsbuildinfo
+
+# ========== Misc ==========
+*.pid
+*.seed
+*.pid.lock
+.grunt
+.lock-wscript
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# ========== Custom Project-Specific ==========
+# Add any custom files/folders specific to your project below:
+_drafts/
+_notes/
+_dev/
+_archive/
+_temp/
+scratch/
+TODO.txt
+NOTES.txt
+
+# ========== Keep Empty Directories ==========
+!.gitkeep

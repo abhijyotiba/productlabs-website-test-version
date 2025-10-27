@@ -1,0 +1,64 @@
+/* ==========================================
+   CTA SECTION
+   Call-to-Action section with gradient fade effect
+   ========================================== */
+
+/* ========== Base CTA Section ========== */
+.cta-section {
+  position: relative;
+  background-color: #000000; /* Solid black background */
+  color: var(--color-text-light);
+  overflow: hidden;
+  margin-top: 0;
+}
+
+/* ========== CTA Gradient Overlay (Fade Effect) ========== */
+.cta-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px; /* Increased height for smoother, more gradual fade */
+  /* Gradient overlay: white at top to transparent at bottom */
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255) 0%,
+    rgba(255, 255, 255, 0.95) 15%,
+    rgba(255, 255, 255, 0.85) 25%,
+    rgba(255, 255, 255, 0.7) 35%,
+    rgba(200, 200, 200, 0.6) 45%,
+    rgba(150, 150, 150, 0.5) 55%,
+    rgba(100, 100, 100, 0.4) 65%,
+    rgba(50, 50, 50, 0.3) 75%,
+    rgba(0, 0, 0, 0.15) 85%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* ========== CTA Content ========== */
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========== CTA Section Background Dark ========== */
+.bg-dark.cta-section {
+  background-color: #000000;
+}
+
+/* ========== Responsive CTA Section ========== */
+@media (max-width: 768px) {
+  .cta-gradient-overlay {
+    height: 300px; /* Smooth gradient on mobile - still tall enough */
+  }
+}
+
+/* ========== Reduced Motion Support ========== */
+@media (prefers-reduced-motion: reduce) {
+  .cta-gradient-overlay {
+    /* Keep gradient but remove any animation if added */
+    animation: none;
+  }
+}

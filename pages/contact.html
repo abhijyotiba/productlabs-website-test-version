@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Product Labs for AI automation solutions. Get in touch with our team today.">
+  <title>Contact Us - Product Labs</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/icons/favicon.png">
+</head>
+<body>
+  
+  <!-- ========== Navigation Bar (Loaded Dynamically) ========== -->
+  <header id="navbar-placeholder"></header>
+
+  <!-- ========== Main Content ========== -->
+  <main>
+    
+    <!-- Page Hero -->
+    <section class="section-padding" style="padding-top: 140px; background: var(--color-bg-dark);">
+      <div class="container" style="text-align: center;">
+        <h1 class="animate-fade-scale" style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--color-text-light);">Get In Touch</h1>
+        <p class="animate-fade-scale" style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); max-width: 800px; margin: 0 auto;">
+          Let's discuss how we can help transform your business with AI automation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+          
+          <!-- Contact Form -->
+          <div class="animate-slide-left">
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Send Us a Message</h2>
+            
+            <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+              
+              <div>
+                <label for="fullName" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  required 
+                  style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; transition: all 0.3s ease;"
+                  placeholder="John Doe"
+                >
+              </div>
+
+              <div>
+                <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; transition: all 0.3s ease;"
+                  placeholder="john@company.com"
+                >
+              </div>
+
+              <div>
+                <label for="company" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Company</label>
+                <input 
+                  type="text" 
+                  id="company" 
+                  name="company" 
+                  style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; transition: all 0.3s ease;"
+                  placeholder="Your Company"
+                >
+              </div>
+
+              <div>
+                <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; transition: all 0.3s ease;"
+                  placeholder="+1 (555) 123-4567"
+                >
+              </div>
+
+              <div>
+                <label for="service" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Service Interested In</label>
+                <select 
+                  id="service" 
+                  name="service" 
+                  style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; background-color: white;"
+                >
+                  <option value="">Select a service</option>
+                  <option value="ai-automation">AI Automation</option>
+                  <option value="consultation">Business Consultation</option>
+                  <option value="custom-development">Custom Development</option>
+                  <option value="training">Training & Workshops</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message *</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  required 
+                  rows="6" 
+                  style="width: 100%; padding: 0.875rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; font-size: 1rem; resize: vertical; transition: all 0.3s ease;"
+                  placeholder="Tell us about your project..."
+                ></textarea>
+              </div>
+
+              <div>
+                <button type="submit" class="btn btn-dark" style="width: 100%; padding: 1rem; font-size: 1.125rem;">
+                  Send Message
+                </button>
+              </div>
+
+              <p id="formMessage" style="display: none; padding: 1rem; border-radius: 8px; text-align: center;"></p>
+
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="animate-slide-right">
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Contact Information</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+              
+              <!-- Email -->
+              <div style="display: flex; gap: 1.5rem; align-items: start;">
+                <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--color-bg-light-gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  📧
+                </div>
+                <div>
+                  <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem;">Email</h3>
+                  <a href="mailto:contact@productlabs.com" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">
+                    contact@productlabs.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div style="display: flex; gap: 1.5rem; align-items: start;">
+                <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--color-bg-light-gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  📞
+                </div>
+                <div>
+                  <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem;">Phone</h3>
+                  <a href="tel:+15551234567" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">
+                    +1 (555) 123-4567
+                  </a>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div style="display: flex; gap: 1.5rem; align-items: start;">
+                <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--color-bg-light-gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  📍
+                </div>
+                <div>
+                  <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem;">Office</h3>
+                  <p style="color: var(--color-text-muted); line-height: 1.6;">
+                    123 Innovation Drive<br>
+                    Tech Hub, Suite 400<br>
+                    San Francisco, CA 94105
+                  </p>
+                </div>
+              </div>
+
+              <!-- Business Hours -->
+              <div style="display: flex; gap: 1.5rem; align-items: start;">
+                <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--color-bg-light-gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                  🕒
+                </div>
+                <div>
+                  <h3 style="font-size: 1.125rem; margin-bottom: 0.5rem;">Business Hours</h3>
+                  <p style="color: var(--color-text-muted); line-height: 1.6;">
+                    Monday - Friday: 9:00 AM - 6:00 PM PST<br>
+                    Saturday - Sunday: Closed
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Social Links -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+              <h3 style="font-size: 1.125rem; margin-bottom: 1.5rem;">Follow Us</h3>
+              <div style="display: flex; gap: 1rem;">
+                <a href="#" style="width: 40px; height: 40px; background: var(--color-bg-light-gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+                  <span style="font-size: 1.25rem;">𝕏</span>
+                </a>
+                <a href="#" style="width: 40px; height: 40px; background: var(--color-bg-light-gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+                  <span style="font-size: 1.25rem;">in</span>
+                </a>
+                <a href="#" style="width: 40px; height: 40px; background: var(--color-bg-light-gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+                  <span style="font-size: 1.25rem;">f</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding bg-light-gray">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Frequently Asked Questions</h2>
+        <p class="section-subtitle animate-on-scroll">Quick answers to common questions</p>
+        
+        <div style="max-width: 800px; margin: 3rem auto 0;">
+          
+          <div class="info-card animate-on-scroll" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">How long does a typical project take?</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.7;">
+              Project timelines vary depending on complexity, but most implementations take 4-12 weeks from kickoff to completion. We provide detailed timelines during the consultation phase.
+            </p>
+          </div>
+
+          <div class="info-card animate-on-scroll" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">What industries do you work with?</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.7;">
+              We work across various industries including healthcare, finance, retail, manufacturing, and professional services. Our solutions are adaptable to any business with repetitive processes.
+            </p>
+          </div>
+
+          <div class="info-card animate-on-scroll" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">Do you offer ongoing support?</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.7;">
+              Yes! We provide comprehensive support packages including training, maintenance, updates, and optimization to ensure your AI solutions continue delivering value.
+            </p>
+          </div>
+
+          <div class="info-card animate-on-scroll" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">What's the investment range for AI automation?</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.7;">
+              Investment varies based on scope and complexity. Projects typically range from $10K-$100K+. We offer flexible engagement models and can work within your budget to maximize ROI.
+            </p>
+          </div>
+
+          <div class="info-card animate-on-scroll">
+            <h3 style="font-size: 1.125rem; margin-bottom: 0.75rem;">How do I get started?</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.7;">
+              Simply fill out the contact form above or email us directly. We'll schedule a free consultation to discuss your needs and develop a customized solution proposal.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer (Loaded Dynamically) ========== -->
+  <footer id="footer-placeholder"></footer>
+
+  <!-- ========== Scripts ========== -->
+  <script src="/js/main.js"></script>
+  <script src="/js/contact.js"></script>
+
+  <style>
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--color-text-dark);
+      box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.1);
+    }
+
+    input:hover,
+    textarea:hover,
+    select:hover {
+      border-color: var(--color-gray-400);
+    }
+
+    @media (max-width: 768px) {
+      section > div > div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+
+</body>
+</html>

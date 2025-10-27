@@ -1,0 +1,293 @@
+/* ==========================================
+   CARDS
+   Card components and variants
+   ========================================== */
+
+/* ========== Base Card ========== */
+.card {
+  background-color: var(--color-bg-white);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  border: 1px solid var(--color-border);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+/* ========== Info Card ========== */
+.info-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card-compact {
+  padding: 1.5rem;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #1a1a1a, #4a4a4a);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info-card:hover::before {
+  transform: scaleX(1);
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.info-card-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover .info-card-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.info-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.info-card-compact .info-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-card-description {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.7;
+}
+
+.info-card-compact .info-card-description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* ========== Feature Card ========== */
+.feature-card {
+  background: var(--color-bg-white);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-card-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-light-gray);
+  border-radius: var(--border-radius-xl);
+  font-size: 2rem;
+}
+
+/* ========== Service Card ========== */
+.service-card {
+  background: var(--color-bg-white);
+  border-radius: var(--border-radius-2xl);
+  padding: var(--spacing-2xl);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.02));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+.service-card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-2xl);
+}
+
+/* ========== Product Card ========== */
+.product-card {
+  background: var(--color-bg-white);
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+.product-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-card-image {
+  transform: scale(1.05);
+}
+
+.product-card-content {
+  padding: var(--spacing-lg);
+}
+
+/* ========== Stat Card ========== */
+.stat-card {
+  text-align: center;
+  padding: 2.5rem var(--spacing-xl);
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #1a1a1a, #4a4a4a);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-card:hover::before {
+  transform: scaleX(1);
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  display: block;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ========== Testimonial Card ========== */
+.testimonial-card {
+  background: var(--color-bg-white);
+  border-radius: var(--border-radius-2xl);
+  padding: var(--spacing-2xl);
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-size: 4rem;
+  color: var(--color-gray-200);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+/* ========== Hover Lift Effect ========== */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-2xl);
+}
+
+/* ========== Card Grids ========== */
+.card-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.card-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ========== Responsive Cards ========== */
+@media (max-width: 768px) {
+  .info-card,
+  .service-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .card-grid,
+  .card-grid-2,
+  .card-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}

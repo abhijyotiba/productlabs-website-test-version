@@ -1,0 +1,250 @@
+/* ==========================================
+   ENHANCED CAROUSEL STYLES
+   Professional product carousel with images
+   ========================================== */
+
+/* Card hover effects */
+.carousel-card {
+  cursor: pointer;
+}
+
+.carousel-card.active {
+  animation: cardFadeIn 0.6s ease-out;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Image wrapper gradient overlay */
+.carousel-card-image-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.carousel-card:hover .carousel-card-image-wrapper::after {
+  opacity: 1;
+}
+
+/* Enhanced feature tags */
+.feature-tag:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.feature-tag:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.feature-tag:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.carousel-card.active .feature-tag {
+  animation: tagSlideIn 0.4s ease-out backwards;
+}
+
+@keyframes tagSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button icon animation */
+.carousel-btn-prev,
+.carousel-btn-next {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-btn-prev:hover,
+.carousel-btn-next:hover {
+  animation: buttonPulse 0.6s ease-in-out;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.carousel-btn-prev:active,
+.carousel-btn-next:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Enhanced card content animation */
+.carousel-card.active .carousel-card-title {
+  animation: slideInFromBottom 0.5s ease-out 0.2s backwards;
+}
+
+.carousel-card.active .carousel-card-description {
+  animation: slideInFromBottom 0.5s ease-out 0.3s backwards;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glossy effect on cards */
+.carousel-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel-card:hover::before {
+  left: 100%;
+}
+
+/* Shadow depth effect */
+.carousel-card.active {
+  position: relative;
+}
+
+.carousel-card.active::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, transparent 70%);
+  filter: blur(10px);
+  z-index: -1;
+  animation: shadowPulse 2s ease-in-out infinite;
+}
+
+@keyframes shadowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+/* Loading skeleton for images */
+.carousel-card-image-wrapper {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,
+    #d0d0d0 50%,
+    #e0e0e0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.carousel-card-image-wrapper img {
+  position: relative;
+  z-index: 1;
+}
+
+/* Smooth image load transition */
+.carousel-card-image {
+  opacity: 0;
+  animation: fadeInImage 0.5s ease-in forwards;
+}
+
+@keyframes fadeInImage {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .carousel-card::before {
+    display: none; /* Disable glossy effect on mobile */
+  }
+  
+  .carousel-card.active::after {
+    display: none; /* Disable shadow on mobile */
+  }
+  
+  .carousel-card-image-wrapper::after {
+    opacity: 0.5; /* Always show slight overlay on mobile */
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-card,
+  .carousel-card-image,
+  .feature-tag,
+  .carousel-btn-prev,
+  .carousel-btn-next {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .carousel-card.active::after {
+    animation: none !important;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.carousel-btn-prev:focus-visible,
+.carousel-btn-next:focus-visible {
+  outline: 3px solid #555555;
+  outline-offset: 4px;
+}
+
+.carousel-card:focus-visible {
+  outline: 2px solid #555555;
+  outline-offset: 4px;
+}

@@ -1,0 +1,150 @@
+/* ==========================================
+   RESET & BASE STYLES
+   Browser normalization and base element styles
+   ========================================== */
+
+/* ========== CSS Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ========== HTML & Body ========== */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-white);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* ========== Typography Base ========== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: 1rem;
+  color: var(--color-text-dark);
+}
+
+h1 { font-size: var(--font-size-5xl); }
+h2 { font-size: var(--font-size-4xl); }
+h3 { font-size: var(--font-size-3xl); }
+h4 { font-size: var(--font-size-2xl); }
+h5 { font-size: var(--font-size-xl); }
+h6 { font-size: var(--font-size-lg); }
+
+p {
+  margin-bottom: 1rem;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ========== Links ========== */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-text-muted);
+}
+
+/* ========== Images ========== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+svg {
+  display: block;
+}
+
+/* ========== Forms ========== */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  background: transparent;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* ========== Lists ========== */
+ul,
+ol {
+  list-style: none;
+}
+
+/* ========== Tables ========== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* ========== Selection ========== */
+::selection {
+  background-color: var(--color-text-dark);
+  color: var(--color-text-light);
+}
+
+::-moz-selection {
+  background-color: var(--color-text-dark);
+  color: var(--color-text-light);
+}
+
+/* ========== Scrollbar Styling (Webkit) ========== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-400);
+  border-radius: var(--border-radius-lg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-600);
+}
+
+/* ========== Focus States ========== */
+:focus {
+  outline: 2px solid var(--color-text-dark);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-text-dark);
+  outline-offset: 2px;
+}
