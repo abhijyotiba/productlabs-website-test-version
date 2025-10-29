@@ -3,13 +3,24 @@
    Homepage-specific JavaScript (Carousel Logic)
    ========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Wait for main.js to finish its setup
-  setTimeout(initializeCarousel, 300);
+// Import parallax module
+import { initializeParallax } from './modules/parallax.js';
 
+document.addEventListener("DOMContentLoaded", () => {
+  
+  // Initialize parallax effect
+  initializeParallax();
+  
   function initializeCarousel() {
     const track = document.querySelector(".carousel-track");
     if (!track) return; // Exit if carousel doesn't exist on this page
+
+    // Prevent double initialization
+    if (track.dataset.initialized === "true") {
+      console.log("Carousel already initialized, skipping...");
+      return;
+    }
+    track.dataset.initialized = "true";
 
     const cards = Array.from(track.children);
     const nextBtn = document.querySelector(".carousel-btn-next");
@@ -202,4 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     }
   }
+
+  // Initialize carousel immediately on DOM ready
+  initializeCarousel();
 });

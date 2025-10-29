@@ -23,6 +23,28 @@
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  /* GPU acceleration for smoother animations */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Ripple effect on click */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
 }
 
 .btn:disabled {

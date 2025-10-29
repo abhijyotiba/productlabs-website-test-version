@@ -185,9 +185,19 @@
           grid-template-columns: 1fr;
         }
 
+        /* Reset all animations to come from left in mobile */
+        .value-card[data-index="0"],
         .value-card[data-index="1"],
-        .value-card[data-index="4"] {
+        .value-card[data-index="2"],
+        .value-card[data-index="3"],
+        .value-card[data-index="4"],
+        .value-card[data-index="5"] {
           transform: translateX(-60px);
+        }
+
+        /* When visible, reset to no transform */
+        .value-card.visible {
+          transform: translate(0, 0);
         }
       }
     </style>

@@ -3,7 +3,63 @@
    Global JavaScript for Component Loading & Animations
    ========================================== */
 
+// ========== Page Loader ==========
+window.addEventListener('load', () => {
+  const loader = document.getElementById('pageLoader');
+  const body = document.body;
+  
+  // Hide loader after everything is loaded
+  setTimeout(() => {
+    if (loader) {
+      loader.classList.add('hidden');
+      body.classList.remove('loading');
+      
+      // Remove loader from DOM after transition
+      setTimeout(() => {
+        loader.remove();
+      }, 500);
+    }
+  }, 800); // Small delay for smoother experience
+  
+  // Initialize image lazy loading
+  if (typeof initializeLazyLoading === 'function') {
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.textContent = `
+      import { initializeImageOptimizations } from '/js/modules/image-loader.js';
+      initializeImageOptimizations();
+    `;
+    document.body.appendChild(script);
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
+  
+  // ========== 0. Mobile Viewport Height Fix ==========
+  // Fix for mobile browsers (especially Chrome) where 100vh doesn't account for address bar
+  function setViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  // Set on load
+  setViewportHeight();
+
+  // Update on resize (handles orientation changes and address bar show/hide)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      setViewportHeight();
+    }, 100);
+  });
+
+  // Update on orientation change
+  window.addEventListener('orientationchange', () => {
+    setTimeout(() => {
+      setViewportHeight();
+    }, 100);
+  });
   
   // ========== 1. Load Reusable Components ==========
   const loadComponent = (selector, url) => {
@@ -35,16 +91,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById("main-navbar");
     if (!navbar) return;
 
-    // Scroll behavior
+    // Debounced scroll handler for better performance
+    let scrollTimeout;
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
       }
+      
+      scrollTimeout = window.requestAnimationFrame(() => {
+        if (window.scrollY > 20) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Check initial state
 
     // Mobile menu toggle

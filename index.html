@@ -2,18 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Product Labs: Transforming businesses with intelligent AI automation and expert consultation services.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Product Labs: Transforming businesses with intelligent AI automation and expert consultation services. Custom AI solutions, workflow automation, and strategic consulting.">
+  <meta name="keywords" content="AI automation, machine learning, business intelligence, AI consulting, workflow automation, custom AI solutions">
+  <meta name="author" content="Product Labs">
+  <meta name="theme-color" content="#3F3F3F">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Product Labs - AI Automation & Consultation">
+  <meta property="og:description" content="Transforming businesses with intelligent AI automation and expert consultation services.">
+  <meta property="og:image" content="/assets/hero/hero-poster.png">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Product Labs - AI Automation & Consultation">
+  <meta name="twitter:description" content="Transforming businesses with intelligent AI automation and expert consultation services.">
+  
   <title>Product Labs - AI Automation & Consultation</title>
+  
+  <!-- DNS Prefetch & Preconnect for Performance -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/productlabs-logo-icon-white.png">
+  <link rel="apple-touch-icon" href="assets/icons/productlabs-logo-icon-white.png">
+  
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="/css/main.css" as="style">
+  <link rel="preload" href="/assets/hero/hero-video.mp4" as="video" type="video/mp4">
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/main.css">
   
-  <!-- Favicon (optional) -->
-  <link rel="icon" type="image/png" href="/assets/icons/favicon.png">
+  <!-- Loading Animation Styles (Inline for instant display) -->
+  <style>
+    .page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    
+    .page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .loader-content {
+      text-align: center;
+    }
+    
+    .loader-logo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 2rem;
+      animation: logoFloat 2s ease-in-out infinite;
+    }
+    
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid #f0f0f0;
+      border-top-color: #3F3F3F;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto;
+    }
+    
+    .loader-text {
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: #666;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    body.loading {
+      overflow: hidden;
+    }
+  </style>
 </head>
-<body>
+<body class="loading">
   
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" stroke="#3F3F3F" stroke-width="3" opacity="0.2"/>
+          <path d="M50 10 L50 50 L80 50" stroke="#3F3F3F" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading Experience...</p>
+    </div>
+  </div>
+
   <!-- ========== Navigation Bar (Loaded Dynamically) ========== -->
   <header id="navbar-placeholder"></header>
 
@@ -23,7 +125,7 @@
     <!-- Hero Section with Video Background -->
     <section class="hero-section">
       <div class="hero-video-wrapper">
-        <video playsinline autoplay muted loop poster="/assets/hero/hero-poster.png">
+        <video playsinline autoplay muted loop poster="/assets/hero/hero-poster.png" preload="metadata">
           <source src="/assets/hero/hero-video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -36,6 +138,10 @@
           <a href="/pages/products.html" class="btn btn-light">Explore Our Products</a>
           <a href="/pages/contact.html" class="btn btn-dark">Schedule Consultation</a>
         </div>
+      </div>
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
       </div>
     </section>
 
@@ -408,44 +514,44 @@
               </div>
             </div>
 
-            <!-- Product Card 2 -->
+            <!-- Product Card 2 - Dental Admin -->
             <div class="carousel-card">
               <div class="carousel-card-image-wrapper">
-                <img src="/assets/features/feature-2.png" alt="InsightAI Analytics" class="carousel-card-image" loading="lazy">
+                <img src="/assets/projects/dental admin.png" alt="Dental Admin" class="carousel-card-image" loading="lazy">
               </div>
               <div class="carousel-card-content">
-                <h3 class="carousel-card-title">InsightAI Analytics</h3>
+                <h3 class="carousel-card-title">Dental Admin</h3>
                 <p class="carousel-card-description">
-                  Transform your data into actionable insights with our powerful analytics platform. Real-time dashboards, predictive analytics, and custom reporting in one unified solution.
+                  Streamline your dental practice with AI-powered voice admin solutions. Manage appointments, patient records, and administrative tasks effortlessly.
                 </p>
                 <div class="carousel-card-features">
-                  <span class="feature-tag">Analytics</span>
-                  <span class="feature-tag">Dashboards</span>
-                  <span class="feature-tag">Real-time</span>
+                  <span class="feature-tag">Voice AI</span>
+                  <span class="feature-tag">Appointments</span>
+                  <span class="feature-tag">Patient Records</span>
                 </div>
               </div>
             </div>
 
-            <!-- Product Card 3 -->
+            <!-- Product Card 3 - Spa Receptionist -->
             <div class="carousel-card">
               <div class="carousel-card-image-wrapper">
-                <img src="/assets/features/feature-3.png" alt="ChatBot Studio" class="carousel-card-image" loading="lazy">
+                <img src="/assets/projects/Spa receptionist.png" alt="Spa Receptionist" class="carousel-card-image" loading="lazy">
               </div>
               <div class="carousel-card-content">
-                <h3 class="carousel-card-title">ChatBot Studio</h3>
+                <h3 class="carousel-card-title">Spa Receptionist</h3>
                 <p class="carousel-card-description">
-                  Build intelligent conversational AI assistants for customer service, sales, and support. Natural language processing with multi-channel deployment capabilities.
+                  Transform your spa operations with intelligent voice automation. Handle bookings, customer inquiries, and service coordination seamlessly.
                 </p>
                 <div class="carousel-card-features">
-                  <span class="feature-tag">Conversational AI</span>
-                  <span class="feature-tag">NLP</span>
-                  <span class="feature-tag">Multi-channel</span>
+                  <span class="feature-tag">Voice Automation</span>
+                  <span class="feature-tag">Bookings</span>
+                  <span class="feature-tag">Customer Service</span>
                 </div>
               </div>
             </div>
 
-            <!-- Product Card 4 -->
-            <div class="carousel-card">
+            <!-- Product Card 4 - COMMENTED OUT FOR NOW -->
+            <!-- <div class="carousel-card">
               <div class="carousel-card-image-wrapper">
                 <img src="/assets/features/feature-4.png" alt="SmartSearch Engine" class="carousel-card-image" loading="lazy">
               </div>
@@ -460,10 +566,10 @@
                   <span class="feature-tag">Enterprise</span>
                 </div>
               </div>
-            </div>
+            </div> -->
 
-            <!-- Product Card 5 -->
-            <div class="carousel-card">
+            <!-- Product Card 5 - COMMENTED OUT FOR NOW -->
+            <!-- <div class="carousel-card">
               <div class="carousel-card-image-wrapper">
                 <img src="/assets/features/feature-5.png" alt="PredictCore" class="carousel-card-image" loading="lazy">
               </div>
@@ -478,7 +584,7 @@
                   <span class="feature-tag">Data-Driven</span>
                 </div>
               </div>
-            </div>
+            </div> -->
 
           </div>
           <button class="carousel-btn-prev" aria-label="Previous product">‹</button>
@@ -554,6 +660,22 @@
 
       .stat-card-animated[data-index="3"].visible {
         transition-delay: 300ms;
+      }
+
+      /* Mobile fix for stat cards */
+      @media (max-width: 768px) {
+        /* Reset all stat cards to come from bottom in mobile */
+        .stat-card-animated[data-index="0"],
+        .stat-card-animated[data-index="1"],
+        .stat-card-animated[data-index="2"],
+        .stat-card-animated[data-index="3"] {
+          transform: translateY(30px);
+        }
+
+        /* When visible, reset to no transform */
+        .stat-card-animated.visible {
+          transform: translateY(0);
+        }
       }
     </style>
 
@@ -703,9 +825,19 @@
           grid-template-columns: 1fr;
         }
 
+        /* Reset all animations to come from left in mobile */
+        .industry-card[data-index="0"],
         .industry-card[data-index="1"],
-        .industry-card[data-index="4"] {
+        .industry-card[data-index="2"],
+        .industry-card[data-index="3"],
+        .industry-card[data-index="4"],
+        .industry-card[data-index="5"] {
           transform: translateX(-60px);
+        }
+
+        /* When visible, reset to no transform */
+        .industry-card.visible {
+          transform: translate(0, 0);
         }
       }
     </style>
@@ -949,109 +1081,397 @@
       </div>
     </section>
 
-    <!-- Testimonials Section (Optional) -->
-    <section id="testimonials" class="section-padding">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding testimonials-section">
       <div class="container">
-        <h2 class="section-title animate-on-scroll">What Our Clients Say</h2>
-        <p class="section-subtitle animate-on-scroll">Real feedback from real businesses</p>
+        <div class="text-center mb-12">
+          <div class="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium animate-on-scroll">
+            Testimonials
+          </div>
+          <h2 class="section-title animate-on-scroll">What Our Clients Say</h2>
+          <p class="section-subtitle animate-on-scroll">Real feedback from real businesses transforming with AI</p>
+        </div>
         
         <div class="testimonial-carousel-wrapper">
-          <div class="testimonial-carousel">
+          <div class="testimonial-carousel" id="testimonialCarousel">
             <!-- Original testimonials -->
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"Product Labs transformed our operations. Their AI automation solution reduced our processing time by 60% and significantly improved accuracy."</p>
-              <h4 class="testimonial-name">Sarah Johnson</h4>
-              <p class="testimonial-title">CEO, TechFlow Inc.</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">Sarah Johnson</h4>
+                  <p class="testimonial-title">CEO, TechFlow Inc.</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"Product Labs transformed our operations. Their AI automation solution reduced our processing time by 60% and significantly improved accuracy. The ROI exceeded our expectations."</p>
+              <div class="testimonial-tags">
+                <span class="tag">AI Automation</span>
+                <span class="tag">60% Time Saved</span>
+              </div>
             </div>
 
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"The consultation services were exceptional. They helped us develop a clear AI strategy that aligned perfectly with our business goals."</p>
-              <h4 class="testimonial-name">Michael Chen</h4>
-              <p class="testimonial-title">CTO, DataCore Systems</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">Michael Chen</h4>
+                  <p class="testimonial-title">CTO, DataCore Systems</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"The consultation services were exceptional. They helped us develop a clear AI strategy that aligned perfectly with our business goals and provided ongoing support throughout implementation."</p>
+              <div class="testimonial-tags">
+                <span class="tag">Strategy</span>
+                <span class="tag">Consultation</span>
+              </div>
             </div>
 
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"Outstanding support and expertise. The team at Product Labs made our AI implementation smooth and delivered results beyond our expectations."</p>
-              <h4 class="testimonial-name">Emily Rodriguez</h4>
-              <p class="testimonial-title">VP Operations, GlobalRetail Co.</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">Emily Rodriguez</h4>
+                  <p class="testimonial-title">VP Operations, GlobalRetail Co.</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"Outstanding support and expertise. The team at Product Labs made our AI implementation smooth and delivered results beyond our expectations. True partners in our digital transformation."</p>
+              <div class="testimonial-tags">
+                <span class="tag">Implementation</span>
+                <span class="tag">Support</span>
+              </div>
             </div>
 
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"The ROI was evident within the first quarter. Product Labs' automation solutions have been a game-changer for our business efficiency."</p>
-              <h4 class="testimonial-name">David Park</h4>
-              <p class="testimonial-title">CFO, InnovateTech</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">David Park</h4>
+                  <p class="testimonial-title">CFO, InnovateTech</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"The ROI was evident within the first quarter. Product Labs' automation solutions have been a game-changer for our business efficiency and cost reduction initiatives."</p>
+              <div class="testimonial-tags">
+                <span class="tag">ROI Focused</span>
+                <span class="tag">Cost Reduction</span>
+              </div>
             </div>
 
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"Professional, knowledgeable, and results-driven. They took time to understand our needs and delivered a solution that exceeded expectations."</p>
-              <h4 class="testimonial-name">Lisa Martinez</h4>
-              <p class="testimonial-title">Director of IT, MedCore Health</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">Lisa Martinez</h4>
+                  <p class="testimonial-title">Director of IT, MedCore Health</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"Professional, knowledgeable, and results-driven. They took time to understand our needs and delivered a solution that exceeded expectations while ensuring full compliance."</p>
+              <div class="testimonial-tags">
+                <span class="tag">Healthcare</span>
+                <span class="tag">Compliance</span>
+              </div>
             </div>
 
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"Working with Product Labs was seamless. Their AI expertise helped us automate complex workflows and scale our operations efficiently."</p>
-              <h4 class="testimonial-name">James Wilson</h4>
-              <p class="testimonial-title">COO, SmartLogistics</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">James Wilson</h4>
+                  <p class="testimonial-title">COO, SmartLogistics</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"Working with Product Labs was seamless. Their AI expertise helped us automate complex workflows and scale our operations efficiently across multiple locations."</p>
+              <div class="testimonial-tags">
+                <span class="tag">Workflow Automation</span>
+                <span class="tag">Scalable</span>
+              </div>
             </div>
 
             <!-- Duplicate for seamless loop -->
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"Product Labs transformed our operations. Their AI automation solution reduced our processing time by 60% and significantly improved accuracy."</p>
-              <h4 class="testimonial-name">Sarah Johnson</h4>
-              <p class="testimonial-title">CEO, TechFlow Inc.</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">Sarah Johnson</h4>
+                  <p class="testimonial-title">CEO, TechFlow Inc.</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"Product Labs transformed our operations. Their AI automation solution reduced our processing time by 60% and significantly improved accuracy. The ROI exceeded our expectations."</p>
+              <div class="testimonial-tags">
+                <span class="tag">AI Automation</span>
+                <span class="tag">60% Time Saved</span>
+              </div>
             </div>
 
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"The consultation services were exceptional. They helped us develop a clear AI strategy that aligned perfectly with our business goals."</p>
-              <h4 class="testimonial-name">Michael Chen</h4>
-              <p class="testimonial-title">CTO, DataCore Systems</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">Michael Chen</h4>
+                  <p class="testimonial-title">CTO, DataCore Systems</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"The consultation services were exceptional. They helped us develop a clear AI strategy that aligned perfectly with our business goals and provided ongoing support throughout implementation."</p>
+              <div class="testimonial-tags">
+                <span class="tag">Strategy</span>
+                <span class="tag">Consultation</span>
+              </div>
             </div>
 
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"Outstanding support and expertise. The team at Product Labs made our AI implementation smooth and delivered results beyond our expectations."</p>
-              <h4 class="testimonial-name">Emily Rodriguez</h4>
-              <p class="testimonial-title">VP Operations, GlobalRetail Co.</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">Emily Rodriguez</h4>
+                  <p class="testimonial-title">VP Operations, GlobalRetail Co.</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"Outstanding support and expertise. The team at Product Labs made our AI implementation smooth and delivered results beyond our expectations. True partners in our digital transformation."</p>
+              <div class="testimonial-tags">
+                <span class="tag">Implementation</span>
+                <span class="tag">Support</span>
+              </div>
             </div>
 
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"The ROI was evident within the first quarter. Product Labs' automation solutions have been a game-changer for our business efficiency."</p>
-              <h4 class="testimonial-name">David Park</h4>
-              <p class="testimonial-title">CFO, InnovateTech</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">David Park</h4>
+                  <p class="testimonial-title">CFO, InnovateTech</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"The ROI was evident within the first quarter. Product Labs' automation solutions have been a game-changer for our business efficiency and cost reduction initiatives."</p>
+              <div class="testimonial-tags">
+                <span class="tag">ROI Focused</span>
+                <span class="tag">Cost Reduction</span>
+              </div>
             </div>
 
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"Professional, knowledgeable, and results-driven. They took time to understand our needs and delivered a solution that exceeded expectations."</p>
-              <h4 class="testimonial-name">Lisa Martinez</h4>
-              <p class="testimonial-title">Director of IT, MedCore Health</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">Lisa Martinez</h4>
+                  <p class="testimonial-title">Director of IT, MedCore Health</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"Professional, knowledgeable, and results-driven. They took time to understand our needs and delivered a solution that exceeded expectations while ensuring full compliance."</p>
+              <div class="testimonial-tags">
+                <span class="tag">Healthcare</span>
+                <span class="tag">Compliance</span>
+              </div>
             </div>
 
             <div class="testimonial-card-slide">
-              <p class="testimonial-quote">"Working with Product Labs was seamless. Their AI expertise helped us automate complex workflows and scale our operations efficiently."</p>
-              <h4 class="testimonial-name">James Wilson</h4>
-              <p class="testimonial-title">COO, SmartLogistics</p>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="testimonial-info">
+                  <h4 class="testimonial-name">James Wilson</h4>
+                  <p class="testimonial-title">COO, SmartLogistics</p>
+                </div>
+                <div class="testimonial-rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+              </div>
+              <p class="testimonial-quote">"Working with Product Labs was seamless. Their AI expertise helped us automate complex workflows and scale our operations efficiently across multiple locations."</p>
+              <div class="testimonial-tags">
+                <span class="tag">Workflow Automation</span>
+                <span class="tag">Scalable</span>
+              </div>
             </div>
           </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <div class="testimonial-controls">
+          <button class="control-btn" id="pauseTestimonials" aria-label="Pause carousel">
+            <svg class="play-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
     <style>
+      /* Testimonials Section Enhancements */
+      .testimonials-section {
+        background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonials-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+      }
+
       /* Testimonial Infinite Carousel */
       .testimonial-carousel-wrapper {
         overflow: hidden;
         position: relative;
-        margin: 0 auto;
+        margin: 3rem auto 0;
         max-width: 100%;
+        padding: 1rem 0;
       }
 
       .testimonial-carousel {
         display: flex;
-        gap: 2rem;
-        animation: scroll-left 40s linear infinite;
+        gap: 1.5rem;
+        animation: scroll-left 60s linear infinite;
         width: max-content;
       }
 
-      .testimonial-carousel:hover {
+      .testimonial-carousel.paused {
         animation-play-state: paused;
       }
 
@@ -1064,47 +1484,84 @@
         }
       }
 
+      /* Enhanced Testimonial Card */
       .testimonial-card-slide {
-        flex: 0 0 400px;
+        flex: 0 0 420px;
         background: #ffffff;
         border-radius: 16px;
-        padding: 2.5rem 2rem;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
+        padding: 0;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonial-card-slide::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #3F3F3F, #666);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
       }
 
       .testimonial-card-slide:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-        border-color: rgba(0, 0, 0, 0.2);
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        border-color: rgba(0, 0, 0, 0.15);
       }
 
-      .testimonial-quote {
-        font-style: italic;
-        color: #666666;
-        font-size: 0.95rem;
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-        position: relative;
+      .testimonial-card-slide:hover::before {
+        transform: scaleX(1);
       }
 
-      .testimonial-quote::before {
-        content: '"';
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        font-size: 3rem;
-        color: #e0e0e0;
-        font-family: Georgia, serif;
-        line-height: 1;
+      /* Testimonial Header */
+      .testimonial-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.75rem 1.75rem 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .testimonial-avatar {
+        flex-shrink: 0;
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #3F3F3F, #666);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+      }
+
+      .testimonial-card-slide:hover .testimonial-avatar {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .testimonial-avatar svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .testimonial-info {
+        flex: 1;
+        min-width: 0;
       }
 
       .testimonial-name {
         font-size: 1.125rem;
         font-weight: 700;
         color: #1a1a1a;
-        margin-bottom: 0.25rem;
+        margin: 0 0 0.25rem 0;
       }
 
       .testimonial-title {
@@ -1113,17 +1570,177 @@
         margin: 0;
       }
 
+      .testimonial-rating {
+        display: flex;
+        gap: 2px;
+        margin-top: 4px;
+      }
+
+      .testimonial-rating .star {
+        font-size: 1rem;
+        color: #fbbf24;
+      }
+
+      /* Testimonial Quote */
+      .testimonial-quote {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+        color: #444;
+        padding: 1.5rem 1.75rem;
+        margin: 0;
+        position: relative;
+      }
+
+      .testimonial-quote::before {
+        content: '"';
+        position: absolute;
+        top: 0.5rem;
+        left: 1rem;
+        font-size: 4rem;
+        color: rgba(0, 0, 0, 0.05);
+        font-family: Georgia, serif;
+        line-height: 1;
+        pointer-events: none;
+      }
+
+      /* Testimonial Tags */
+      .testimonial-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0 1.75rem 1.75rem;
+      }
+
+      .testimonial-tags .tag {
+        display: inline-block;
+        padding: 0.375rem 0.75rem;
+        background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+        color: #374151;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card-slide:hover .testimonial-tags .tag {
+        background: linear-gradient(135deg, #3F3F3F, #666);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* Carousel Controls */
+      .testimonial-controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      .control-btn {
+        background: white;
+        border: 2px solid #e5e7eb;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #3F3F3F;
+      }
+
+      .control-btn:hover {
+        background: #3F3F3F;
+        border-color: #3F3F3F;
+        color: white;
+        transform: scale(1.1);
+      }
+
+      .control-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .control-btn .hidden {
+        display: none;
+      }
+
+      .control-btn.playing .play-icon {
+        display: block;
+      }
+
+      .control-btn.playing .pause-icon {
+        display: none;
+      }
+
+      /* Responsive Design */
       @media (max-width: 768px) {
         .testimonial-card-slide {
-          flex: 0 0 320px;
-          padding: 2rem 1.5rem;
+          flex: 0 0 340px;
         }
 
         .testimonial-carousel {
-          animation-duration: 30s;
+          animation-duration: 45s;
+        }
+
+        .testimonial-header {
+          padding: 1.5rem 1.5rem 0.875rem;
+        }
+
+        .testimonial-quote {
+          padding: 1.25rem 1.5rem;
+          font-size: 0.875rem;
+        }
+
+        .testimonial-tags {
+          padding: 0 1.5rem 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .testimonial-card-slide {
+          flex: 0 0 300px;
         }
       }
     </style>
+
+    <script>
+      // Enhanced Testimonial Carousel Controls
+      document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.getElementById('testimonialCarousel');
+        const pauseBtn = document.getElementById('pauseTestimonials');
+        let isPaused = false;
+
+        if (pauseBtn && carousel) {
+          pauseBtn.addEventListener('click', function() {
+            isPaused = !isPaused;
+            
+            if (isPaused) {
+              carousel.classList.add('paused');
+              pauseBtn.classList.add('playing');
+              pauseBtn.setAttribute('aria-label', 'Play carousel');
+            } else {
+              carousel.classList.remove('paused');
+              pauseBtn.classList.remove('playing');
+              pauseBtn.setAttribute('aria-label', 'Pause carousel');
+            }
+          });
+
+          // Pause on hover
+          carousel.addEventListener('mouseenter', function() {
+            if (!isPaused) {
+              carousel.classList.add('paused');
+            }
+          });
+
+          carousel.addEventListener('mouseleave', function() {
+            if (!isPaused) {
+              carousel.classList.remove('paused');
+            }
+          });
+        }
+      });
+    </script>
 
     <!-- CTA Section -->
     <section class="section-padding bg-dark cta-section">
@@ -1150,7 +1767,7 @@
 
   <!-- ========== Scripts ========== -->
   <script src="/js/main.js"></script>
-  <script src="/js/home.js"></script>
+  <script type="module" src="/js/home.js"></script>
   <script src="/js/modules/technology-animation.js"></script>
 
 </body>

@@ -195,7 +195,7 @@
 }
 
 /* Smooth image load transition */
-.carousel-card-image {
+img.carousel-card-image {
   opacity: 0;
   animation: fadeInImage 0.5s ease-in forwards;
 }

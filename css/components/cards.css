@@ -11,10 +11,14 @@
   box-shadow: var(--shadow-md);
   transition: all var(--transition-base);
   border: 1px solid var(--color-border);
+  /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .card:hover {
   box-shadow: var(--shadow-xl);
+  transform: translateY(-4px) translateZ(0);
 }
 
 /* ========== Info Card ========== */

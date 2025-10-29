@@ -1,0 +1,41 @@
+/* Critical CSS - Inline in <head> for instant rendering */
+/* This includes only the styles needed for above-the-fold content */
+
+/* Essential resets */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* Typography */
+body{font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;color:#3F3F3F}
+
+/* Container */
+.container{width:100%;max-width:1400px;margin:0 auto;padding:0 2rem}
+
+/* Hero Section - Critical */
+.hero-section{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-video-wrapper{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}
+.hero-video-wrapper video{width:100%;height:100%;object-fit:cover;opacity:.5;filter:grayscale(100%) brightness(.7)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.85) 0%,rgba(0,0,0,.75) 40%,rgba(0,0,0,.6) 70%,rgba(255,255,255,.95) 100%);z-index:2}
+.hero-content{position:relative;z-index:3;text-align:center;color:#fff;padding:4rem 2rem;max-width:900px}
+
+/* Hero typography */
+.hero-title{font-size:3.5rem;font-weight:800;margin-bottom:1.5rem;color:#fff;line-height:1.1;letter-spacing:-.03em;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hero-subtitle{font-size:1.25rem;line-height:1.7;margin-bottom:2.5rem;color:rgba(255,255,255,.95)}
+
+/* Buttons - Critical */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.75rem 1.5rem;font-size:1rem;font-weight:500;text-decoration:none;border-radius:8px;transition:all .3s ease;cursor:pointer}
+.btn-light{background:#f1f1f1;color:#3f3f3f}
+.btn-dark{background:#2a2a2a;color:#fff}
+
+/* Navbar - Critical */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0;transition:all .3s ease}
+.navbar.scrolled{background:rgba(255,255,255,.98);backdrop-filter:blur(10px);box-shadow:0 4px 6px rgba(0,0,0,.1)}
+
+/* Mobile breakpoint */
+@media(max-width:768px){
+  .hero-title{font-size:2rem}
+  .hero-subtitle{font-size:1.125rem}
+  .container{padding:0 1rem}
+}
+
+/* Loading state */
+body.loading{overflow:hidden}

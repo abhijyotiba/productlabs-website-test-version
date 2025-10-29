@@ -1,0 +1,215 @@
+/* ==========================================
+   PERFORMANCE OPTIMIZATIONS
+   Hardware acceleration and optimizations
+   ========================================== */
+
+/* ========== GPU Acceleration ========== */
+/* Force GPU acceleration for commonly animated elements */
+.hero-section,
+.hero-video-wrapper,
+.hero-video-wrapper video,
+.hero-content,
+.carousel-card,
+.btn,
+.info-card,
+.stat-card,
+.feature-service-card,
+.navbar {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ========== Smooth Scrolling ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ========== Image Optimization ========== */
+img {
+  /* Prevent layout shift */
+  display: block;
+  max-width: 100%;
+  height: auto;
+  
+  /* Optimize rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Lazy loading images */
+img[loading="lazy"] {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* ========== Font Loading Optimization ========== */
+/* Prevent FOUT (Flash of Unstyled Text) */
+.fonts-loading body {
+  opacity: 0;
+}
+
+.fonts-loaded body {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* ========== Reduce Repaints/Reflows ========== */
+/* Use transform instead of top/left for positioning */
+.positioned-element {
+  will-change: transform;
+}
+
+/* After animation, remove will-change */
+.positioned-element:not(.animating) {
+  will-change: auto;
+}
+
+/* ========== Optimize Shadows ========== */
+/* Use pseudo-elements for shadows on hover to reduce repaints */
+.optimized-shadow {
+  position: relative;
+}
+
+.optimized-shadow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.optimized-shadow:hover::after {
+  opacity: 1;
+}
+
+/* ========== Video Optimization ========== */
+video {
+  /* Prevent video from causing layout shifts */
+  display: block;
+  width: 100%;
+  height: 100%;
+  
+  /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ========== Critical CSS Above the Fold ========== */
+/* Ensure hero section renders quickly */
+.hero-section {
+  contain: layout style paint;
+}
+
+/* ========== Containment for Better Performance ========== */
+.card,
+.info-card,
+.stat-card,
+.carousel-card {
+  contain: layout style paint;
+}
+
+/* ========== Reduce Paint on Scroll ========== */
+/* Fixed elements should use contain */
+.navbar {
+  contain: layout style;
+}
+
+/* ========== Optimize Filters ========== */
+/* Filters are expensive - use sparingly */
+.filtered-element {
+  will-change: filter;
+}
+
+.filtered-element:not(:hover) {
+  will-change: auto;
+}
+
+/* ========== Debounce Resize Events ========== */
+/* Handled in JavaScript - this is a note */
+/* Use requestAnimationFrame for scroll/resize handlers */
+
+/* ========== Preload Critical Assets ========== */
+/* Add in HTML:
+<link rel="preload" href="/css/main.css" as="style">
+<link rel="preload" href="/assets/hero/hero-video.mp4" as="video">
+*/
+
+/* ========== Content Visibility ========== */
+/* For long pages, hide off-screen content */
+.long-content-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* ========== Optimize Animations ========== */
+/* Only animate transform and opacity for best performance */
+@keyframes optimized-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}
+
+.optimized-animation {
+  animation: optimized-fade-in 0.6s ease forwards;
+}
+
+/* ========== Reduce Motion for Accessibility ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Remove will-change in reduced motion mode */
+  * {
+    will-change: auto !important;
+  }
+}
+
+/* ========== Dark Mode Performance ========== */
+/* Use media query for dark mode instead of JavaScript */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles here if needed */
+}
+
+/* ========== Print Optimization ========== */
+@media print {
+  /* Remove animations and transitions for print */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Hide non-essential elements */
+  .navbar,
+  .footer,
+  .scroll-indicator,
+  video {
+    display: none !important;
+  }
+}

@@ -9,11 +9,15 @@
   transform: translateY(30px);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  /* GPU acceleration */
+  will-change: opacity, transform;
 }
 
 .animate-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
+  /* Remove will-change after animation */
+  will-change: auto;
 }
 
 /* Fade with scale */
@@ -318,6 +322,39 @@
   border-top-color: var(--color-text-dark);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
+}
+
+/* ========== Smooth Section Transitions ========== */
+section {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Fade in sections as they come into view */
+section.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Background gradient transitions */
+.bg-gradient-animate {
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* ========== Parallax Effect (Optional) ========== */
