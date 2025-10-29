@@ -1,3 +1,15 @@
+// EmailJS Configuration
+const EMAILJS_CONFIG = {
+  serviceID: 'service_edj3h45',
+  templateID: 'template_rnytlx5',
+  publicKey: 'pW9FzN_zDVFWs8lUP'
+};
+
+// Initialize EmailJS
+(function() {
+  emailjs.init(EMAILJS_CONFIG.publicKey);
+})();
+
 // Contact Form Validation and Submission
 document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contactForm');
@@ -36,17 +48,36 @@ document.addEventListener('DOMContentLoaded', () => {
       submitButton.textContent = 'Sending...';
       submitButton.disabled = true;
 
-      // Simulate form submission (replace with actual API call)
+      // Send email via EmailJS
       try {
-        await simulateFormSubmission(formData);
+        // Prepare template parameters
+        const templateParams = {
+          from_name: formData.fullName,
+          from_email: formData.email,
+          company: formData.company || 'Not provided',
+          phone: formData.phone || 'Not provided',
+          service: formData.service || 'Not specified',
+          message: formData.message,
+          to_email: 'connect@productlabs.us' // Your receiving email
+        };
+
+        // Send email using EmailJS
+        const response = await emailjs.send(
+          EMAILJS_CONFIG.serviceID,
+          EMAILJS_CONFIG.templateID,
+          templateParams
+        );
+
+        console.log('Email sent successfully:', response);
         
         // Success
         showMessage('Thank you for your message! We\'ll get back to you within 24 hours.', 'success');
         contactForm.reset();
         
       } catch (error) {
+        console.error('EmailJS Error:', error);
         // Error
-        showMessage('Sorry, something went wrong. Please try again or email us directly.', 'error');
+        showMessage('Sorry, something went wrong. Please try again or email us directly at connect@productlabs.us', 'error');
       } finally {
         // Reset button
         setTimeout(() => {
@@ -69,21 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       formMessage.style.display = 'none';
     }, 5000);
-  }
-
-  // Simulate form submission (replace with actual API endpoint)
-  function simulateFormSubmission(data) {
-    return new Promise((resolve) => {
-      // In production, replace this with:
-      // fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(data)
-      // });
-      
-      console.log('Form data:', data);
-      setTimeout(resolve, 1500);
-    });
   }
 
   // Add focus animations to form inputs
