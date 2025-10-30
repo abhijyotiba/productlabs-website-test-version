@@ -19,38 +19,80 @@ export function initializeNavbar() {
   window.addEventListener("scroll", handleScroll);
   handleScroll(); // Check initial state
 
-  // ========== Mobile Menu Toggle ==========
+  // ========== Mobile Menu Toggle (Enhanced) ==========
   const mobileToggle = document.getElementById("mobile-menu-btn");
   const mobilePanel = document.getElementById("mobile-menu");
   
-  if (mobileToggle && mobilePanel) {
-    mobileToggle.addEventListener("click", () => {
-      const isActive = mobileToggle.classList.toggle("active");
-      mobilePanel.classList.toggle("active");
-      mobileToggle.setAttribute("aria-expanded", isActive);
-      
-      // Prevent body scroll when mobile menu is open
-      document.body.style.overflow = isActive ? "hidden" : "";
+  // Create backdrop element
+  let mobileBackdrop = document.querySelector(".mobile-menu-backdrop");
+  if (!mobileBackdrop && mobilePanel) {
+    mobileBackdrop = document.createElement("div");
+    mobileBackdrop.className = "mobile-menu-backdrop";
+    document.body.appendChild(mobileBackdrop);
+  }
+  
+  if (mobileToggle && mobilePanel && mobileBackdrop) {
+    const closeMobileMenu = () => {
+      mobilePanel.classList.remove("active");
+      mobileToggle.classList.remove("active");
+      mobileBackdrop.classList.remove("active");
+      mobileToggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    };
+
+    const openMobileMenu = () => {
+      mobilePanel.classList.add("active");
+      mobileToggle.classList.add("active");
+      mobileBackdrop.classList.add("active");
+      mobileToggle.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    };
+
+    mobileToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isActive = mobileToggle.classList.contains("active");
+      if (isActive) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
 
     // Close mobile menu when clicking a link
     const mobileLinks = mobilePanel.querySelectorAll("a");
     mobileLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        mobilePanel.classList.remove("active");
-        mobileToggle.classList.remove("active");
-        mobileToggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      });
+      link.addEventListener("click", closeMobileMenu);
     });
 
-    // Close mobile menu when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!navbar.contains(e.target) && mobilePanel.classList.contains("active")) {
-        mobilePanel.classList.remove("active");
-        mobileToggle.classList.remove("active");
-        mobileToggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
+    // Close mobile menu when clicking backdrop
+    mobileBackdrop.addEventListener("click", closeMobileMenu);
+
+    // Close mobile menu on ESC key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobilePanel.classList.contains("active")) {
+        closeMobileMenu();
+      }
+    });
+  }
+
+  // ========== Active Page Indicator ==========
+  const currentPage = window.location.pathname;
+  const navLinks = navbar.querySelectorAll(".nav-link");
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute("href");
+    if (href && (currentPage === href || currentPage.endsWith(href))) {
+      link.classList.add("active");
+    }
+  });
+
+  // Also mark mobile menu links
+  if (mobilePanel) {
+    const mobileNavLinks = mobilePanel.querySelectorAll("a");
+    mobileNavLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href && (currentPage === href || currentPage.endsWith(href))) {
+        link.classList.add("active");
       }
     });
   }

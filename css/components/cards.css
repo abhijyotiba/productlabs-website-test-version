@@ -21,12 +21,13 @@
   transform: translateY(-4px) translateZ(0);
 }
 
-/* ========== Info Card ========== */
+/* ========== Info Card (Enhanced) ========== */
 .info-card {
-  background: #ffffff;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
   border-radius: 16px;
   padding: 2rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -36,6 +37,7 @@
   padding: 1.5rem;
 }
 
+/* Top accent line with gradient */
 .info-card::before {
   content: '';
   position: absolute;
@@ -49,14 +51,32 @@
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Subtle gradient accent that appears on hover */
+.info-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-text-dark), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 .info-card:hover::before {
   transform: scaleX(1);
 }
 
+.info-card:hover::after {
+  opacity: 1;
+}
+
 .info-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.12);
+  background: linear-gradient(to bottom, #ffffff, #f8f8f8);
 }
 
 .info-card-icon {
@@ -170,11 +190,35 @@
   transform: translateY(-4px);
 }
 
+.product-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+}
+
+/* Skeleton loading animation */
+.product-card-image-wrapper.loading {
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 .product-card-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: transform var(--transition-slow);
+  transition: transform var(--transition-slow), opacity var(--transition-base);
+  opacity: 0;
+}
+
+.product-card-image.loaded {
+  opacity: 1;
 }
 
 .product-card:hover .product-card-image {
@@ -185,24 +229,68 @@
   padding: var(--spacing-lg);
 }
 
-/* ========== Stat Card ========== */
+/* ========== Stat Card (Glassmorphism) ========== */
 .stat-card {
   text-align: center;
-  padding: 2.5rem var(--spacing-xl);
-  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  
+  /* Enhanced Glassmorphism Effect */
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  
+  /* Multi-layered shadows for depth */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
+/* Stat Icon Styling */
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  background: #f3f4f6;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-icon svg {
+  color: #1a1a1a;
+  stroke-width: 2.5;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+  background: #e5e7eb;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card:hover .stat-icon svg {
+  color: #000000;
+}
+
+/* Top accent line */
 .stat-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   height: 3px;
   background: linear-gradient(90deg, #1a1a1a, #4a4a4a);
   transform: scaleX(0);
@@ -210,31 +298,73 @@
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.stat-card:hover {
+  transform: translateY(-8px);
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 .stat-card:hover::before {
   transform: scaleX(1);
 }
 
-.stat-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-  border-color: rgba(0, 0, 0, 0.2);
-}
-
 .stat-number {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #1a1a1a;
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 0.5rem;
   display: block;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Glow effect behind number */
+.stat-number::before {
+  content: attr(data-number);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.stat-card:hover .stat-number {
+  transform: scale(1.08) translateY(-4px);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+.stat-card:hover .stat-number::before {
+  opacity: 0.6;
 }
 
 .stat-label {
-  font-size: 1rem;
-  color: #666666;
-  font-weight: 600;
+  font-size: 0.95rem;
+  color: #334155;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  line-height: 1.4;
+}
+
+.stat-card:hover .stat-label {
+  color: #1e293b;
+  letter-spacing: 0.12em;
 }
 
 /* ========== Testimonial Card ========== */
