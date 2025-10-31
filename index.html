@@ -36,6 +36,7 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/sections/cosmic-background-universal.css">
   
   <!-- Loading Animation Styles (Inline for instant display) -->
   <style>
@@ -137,7 +138,7 @@
         <p class="hero-subtitle">We build custom AI solutions and provide expert consultation to streamline operations, reduce costs, and unlock new opportunities for growth.</p>
         <div class="hero-buttons">
           <a href="/pages/products.html" class="btn btn-light">Explore Our Products</a>
-          <a href="/pages/contact.html" class="btn btn-dark">Schedule Consultation</a>
+          <a href="#" class="btn btn-dark" data-cal-link="product-labs" data-cal-config='{"layout":"month_view"}'>Schedule Consultation</a>
         </div>
       </div>
       <!-- Scroll Indicator -->
@@ -488,7 +489,7 @@
     </script>
 
     <!-- Tech We Work With Section -->
-    <section id="tech-stack" class="section-padding bg-light-gray">
+    <section id="tech-stack" class="section-padding" data-cosmic="true">
       <div class="container">
         <div class="text-center mb-10 max-w-3xl mx-auto animate-on-scroll">
           <div class="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
@@ -805,111 +806,777 @@
     </script>
 
     <!-- Products Carousel Section -->
-    <section id="products" class="section-padding bg-light-gray">
+    <section id="products" class="section-padding products-section-enhanced">
       <div class="container">
-        <h2 class="section-title animate-on-scroll">Our Products</h2>
-        <p class="section-subtitle animate-on-scroll">Innovative AI-powered solutions built for modern businesses</p>
+        <div class="text-center mb-10 max-w-3xl mx-auto animate-on-scroll">
+          <div class="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
+            Our Products
+          </div>
+          <h2 class="section-title">Innovative AI Solutions</h2>
+          <p class="section-subtitle">Powerful products built for modern businesses</p>
+        </div>
         
-        <div class="product-carousel animate-on-scroll">
+        <div class="product-carousel-enhanced animate-on-scroll" data-auto-rotate="false">
           <div class="carousel-track">
             
             <!-- Product Card 1 - TixA -->
             <div class="carousel-card active">
+              <div class="carousel-card-header">
+                <div class="product-badge">Featured</div>
+              </div>
               <div class="carousel-card-image-wrapper">
                 <img src="/assets/projects/TixA.png" alt="TixA" class="carousel-card-image" loading="lazy">
+                <div class="image-overlay"></div>
               </div>
               <div class="carousel-card-content">
+                <div class="product-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    <path d="M8 10h.01M12 10h.01M16 10h.01"></path>
+                  </svg>
+                </div>
                 <h3 class="carousel-card-title">TixA</h3>
                 <p class="carousel-card-description">
                   Autonomous AI that resolves 70%+ of support tickets in seconds. Multi-agent system with enterprise-grade security, compatible with all major helpdesk platforms including Freshdesk and Zendesk.
                 </p>
                 <div class="carousel-card-features">
-                  <span class="feature-tag">Support AI</span>
-                  <span class="feature-tag">Auto-Resolution</span>
-                  <span class="feature-tag">Multi-Agent</span>
+                  <span class="feature-tag">
+                    <svg class="tag-icon" viewBox="0 0 16 16" fill="currentColor">
+                      <circle cx="8" cy="8" r="2"></circle>
+                    </svg>
+                    Support AI
+                  </span>
+                  <span class="feature-tag">
+                    <svg class="tag-icon" viewBox="0 0 16 16" fill="currentColor">
+                      <circle cx="8" cy="8" r="2"></circle>
+                    </svg>
+                    Auto-Resolution
+                  </span>
+                  <span class="feature-tag">
+                    <svg class="tag-icon" viewBox="0 0 16 16" fill="currentColor">
+                      <circle cx="8" cy="8" r="2"></circle>
+                    </svg>
+                    Multi-Agent
+                  </span>
                 </div>
-                <a href="/pages/products/tixa.html" class="btn btn-dark" style="margin-top: 1rem; display: inline-block; padding: 0.625rem 1.25rem; font-size: 0.875rem; text-decoration: none;">Learn More</a>
+                <a href="/pages/products/tixa.html" class="product-cta-btn">
+                  Learn More
+                  <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
               </div>
             </div>
 
             <!-- Product Card 2 - Dental Admin -->
             <div class="carousel-card">
+              <div class="carousel-card-header">
+                <div class="product-badge">Healthcare</div>
+              </div>
               <div class="carousel-card-image-wrapper">
                 <img src="/assets/projects/dental admin.png" alt="Dental Admin" class="carousel-card-image" loading="lazy">
+                <div class="image-overlay"></div>
               </div>
               <div class="carousel-card-content">
+                <div class="product-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                  </svg>
+                </div>
                 <h3 class="carousel-card-title">Dental Admin</h3>
                 <p class="carousel-card-description">
                   Streamline your dental practice with AI-powered voice admin solutions. Manage appointments, patient records, and administrative tasks effortlessly.
                 </p>
                 <div class="carousel-card-features">
-                  <span class="feature-tag">Voice AI</span>
-                  <span class="feature-tag">Appointments</span>
-                  <span class="feature-tag">Patient Records</span>
+                  <span class="feature-tag">
+                    <svg class="tag-icon" viewBox="0 0 16 16" fill="currentColor">
+                      <circle cx="8" cy="8" r="2"></circle>
+                    </svg>
+                    Voice AI
+                  </span>
+                  <span class="feature-tag">
+                    <svg class="tag-icon" viewBox="0 0 16 16" fill="currentColor">
+                      <circle cx="8" cy="8" r="2"></circle>
+                    </svg>
+                    Appointments
+                  </span>
+                  <span class="feature-tag">
+                    <svg class="tag-icon" viewBox="0 0 16 16" fill="currentColor">
+                      <circle cx="8" cy="8" r="2"></circle>
+                    </svg>
+                    Patient Records
+                  </span>
                 </div>
+                <a href="#" class="product-cta-btn">
+                  Learn More
+                  <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
               </div>
             </div>
 
             <!-- Product Card 3 - Spa Receptionist -->
             <div class="carousel-card">
+              <div class="carousel-card-header">
+                <div class="product-badge">Wellness</div>
+              </div>
               <div class="carousel-card-image-wrapper">
                 <img src="/assets/projects/Spa receptionist.png" alt="Spa Receptionist" class="carousel-card-image" loading="lazy">
+                <div class="image-overlay"></div>
               </div>
               <div class="carousel-card-content">
+                <div class="product-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                  </svg>
+                </div>
                 <h3 class="carousel-card-title">Spa Receptionist</h3>
                 <p class="carousel-card-description">
                   Transform your spa operations with intelligent voice automation. Handle bookings, customer inquiries, and service coordination seamlessly.
                 </p>
                 <div class="carousel-card-features">
-                  <span class="feature-tag">Voice Automation</span>
-                  <span class="feature-tag">Bookings</span>
-                  <span class="feature-tag">Customer Service</span>
+                  <span class="feature-tag">
+                    <svg class="tag-icon" viewBox="0 0 16 16" fill="currentColor">
+                      <circle cx="8" cy="8" r="2"></circle>
+                    </svg>
+                    Voice Automation
+                  </span>
+                  <span class="feature-tag">
+                    <svg class="tag-icon" viewBox="0 0 16 16" fill="currentColor">
+                      <circle cx="8" cy="8" r="2"></circle>
+                    </svg>
+                    Bookings
+                  </span>
+                  <span class="feature-tag">
+                    <svg class="tag-icon" viewBox="0 0 16 16" fill="currentColor">
+                      <circle cx="8" cy="8" r="2"></circle>
+                    </svg>
+                    Customer Service
+                  </span>
                 </div>
+                <a href="#" class="product-cta-btn">
+                  Learn More
+                  <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
               </div>
             </div>
 
-            <!-- Product Card 4 - COMMENTED OUT FOR NOW -->
-            <!-- <div class="carousel-card">
-              <div class="carousel-card-image-wrapper">
-                <img src="/assets/features/feature-4.png" alt="SmartSearch Engine" class="carousel-card-image" loading="lazy">
-              </div>
-              <div class="carousel-card-content">
-                <h3 class="carousel-card-title">SmartSearch Engine</h3>
-                <p class="carousel-card-description">
-                  AI-powered enterprise search that understands context and intent. Find information across all your systems instantly with semantic search capabilities.
-                </p>
-                <div class="carousel-card-features">
-                  <span class="feature-tag">Semantic Search</span>
-                  <span class="feature-tag">Context-Aware</span>
-                  <span class="feature-tag">Enterprise</span>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- Product Card 5 - COMMENTED OUT FOR NOW -->
-            <!-- <div class="carousel-card">
-              <div class="carousel-card-image-wrapper">
-                <img src="/assets/features/feature-5.png" alt="PredictCore" class="carousel-card-image" loading="lazy">
-              </div>
-              <div class="carousel-card-content">
-                <h3 class="carousel-card-title">PredictCore</h3>
-                <p class="carousel-card-description">
-                  Advanced predictive modeling platform for forecasting, risk assessment, and strategic planning. Leverage machine learning to make data-driven decisions with confidence.
-                </p>
-                <div class="carousel-card-features">
-                  <span class="feature-tag">Predictive ML</span>
-                  <span class="feature-tag">Forecasting</span>
-                  <span class="feature-tag">Data-Driven</span>
-                </div>
-              </div>
-            </div> -->
-
           </div>
-          <button class="carousel-btn-prev" aria-label="Previous product">‹</button>
-          <button class="carousel-btn-next" aria-label="Next product">›</button>
+          
+          <!-- Navigation Buttons -->
+          <button class="carousel-btn-prev" aria-label="Previous product">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </button>
+          <button class="carousel-btn-next" aria-label="Next product">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 18l6-6-6-6"></path>
+            </svg>
+          </button>
+
+          <!-- Carousel Indicators -->
+          <div class="carousel-indicators">
+            <button class="indicator active" data-index="0" aria-label="Go to product 1"></button>
+            <button class="indicator" data-index="1" aria-label="Go to product 2"></button>
+            <button class="indicator" data-index="2" aria-label="Go to product 3"></button>
+          </div>
         </div>
       </div>
     </section>
+
+    <style>
+      /* ========== Enhanced Products Section ========== */
+      .products-section-enhanced {
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .products-section-enhanced::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+      }
+
+      /* Enhanced Carousel Container */
+      .product-carousel-enhanced {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 0 2rem;
+      }
+
+      .product-carousel-enhanced .carousel-track {
+        position: relative;
+        width: 100%;
+        min-height: 520px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 1500px;
+      }
+
+      /* Enhanced Carousel Cards */
+      .product-carousel-enhanced .carousel-card {
+        position: absolute;
+        width: 380px;
+        min-height: 480px;
+        background: linear-gradient(135deg, #1a2332 0%, #2d3e52 50%, #1e2d3f 100%);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.3);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0.4;
+        transform: scale(0.85) translateX(0);
+        z-index: 1;
+        border: 1px solid rgba(100, 150, 200, 0.25);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Active Card State */
+      .product-carousel-enhanced .carousel-card.active {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+        z-index: 10;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6), 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(100, 150, 200, 0.3);
+        border-color: rgba(100, 150, 200, 0.4);
+      }
+
+      /* Side Cards */
+      .product-carousel-enhanced .carousel-card.prev {
+        transform: scale(0.85) translateX(-120%);
+        opacity: 0.5;
+        z-index: 5;
+        filter: blur(2px);
+      }
+
+      .product-carousel-enhanced .carousel-card.next {
+        transform: scale(0.85) translateX(120%);
+        opacity: 0.5;
+        z-index: 5;
+        filter: blur(2px);
+      }
+
+      /* Card Header with Badge */
+      .carousel-card-header {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 20;
+      }
+
+      .product-badge {
+        background: rgba(74, 106, 138, 0.3);
+        backdrop-filter: blur(12px);
+        padding: 0.375rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.6875rem;
+        font-weight: 700;
+        color: #e8f0f7;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(100, 150, 200, 0.3);
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.4s ease;
+      }
+
+      .carousel-card.active .product-badge {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.2s;
+      }
+
+      /* Image Wrapper */
+      .product-carousel-enhanced .carousel-card-image-wrapper {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .product-carousel-enhanced .carousel-card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        opacity: 0.9;
+      }
+
+      .product-carousel-enhanced .carousel-card.active .carousel-card-image {
+        opacity: 1;
+      }
+
+      .product-carousel-enhanced .carousel-card:hover .carousel-card-image {
+        transform: scale(1.08);
+      }
+
+      /* Image Overlay */
+      .image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+        transition: background 0.4s ease;
+        pointer-events: none;
+      }
+
+      .product-carousel-enhanced .carousel-card:hover .image-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 100%);
+      }
+
+      /* Card Content */
+      .product-carousel-enhanced .carousel-card-content {
+        padding: 1.5rem 1.5rem 1.75rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        position: relative;
+      }
+
+      /* Product Icon */
+      .product-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.4s ease;
+      }
+
+      .product-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .product-carousel-enhanced .carousel-card:hover .product-icon {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Card Title */
+      .product-carousel-enhanced .carousel-card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #e8f0f7;
+        margin: 0;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Card Description */
+      .product-carousel-enhanced .carousel-card-description {
+        font-size: 0.875rem;
+        color: #b8c9db;
+        line-height: 1.6;
+        margin: 0;
+        flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      /* Feature Tags */
+      .product-carousel-enhanced .carousel-card-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+        margin-top: auto;
+      }
+
+      .product-carousel-enhanced .feature-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.375rem 0.625rem;
+        background: rgba(100, 150, 200, 0.15);
+        color: #a8c5e0;
+        border-radius: 16px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        border: 1px solid rgba(100, 150, 200, 0.25);
+        transition: all 0.3s ease;
+      }
+
+      .tag-icon {
+        width: 8px;
+        height: 8px;
+      }
+
+      .product-carousel-enhanced .carousel-card:hover .feature-tag {
+        background: rgba(120, 170, 220, 0.25);
+        color: #d4e4f5;
+        border-color: rgba(120, 170, 220, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      /* CTA Button */
+      .product-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.625rem 1.25rem;
+        background: rgba(255, 255, 255, 0.95);
+        color: #1a2332;
+        font-weight: 600;
+        font-size: 0.875rem;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 1);
+        align-self: flex-start;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-cta-btn::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+      }
+
+      .product-cta-btn:hover::before {
+        transform: translateX(100%);
+      }
+
+      .product-cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+        background: #ffffff;
+      }
+
+      .btn-arrow {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.3s ease;
+      }
+
+      .product-cta-btn:hover .btn-arrow {
+        transform: translateX(4px);
+      }
+
+      /* Navigation Buttons */
+      .product-carousel-enhanced .carousel-btn-prev,
+      .product-carousel-enhanced .carousel-btn-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffffff, #f8f9fa);
+        color: #3F3F3F;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 20;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-carousel-enhanced .carousel-btn-prev {
+        left: -24px;
+      }
+
+      .product-carousel-enhanced .carousel-btn-next {
+        right: -24px;
+      }
+
+      .product-carousel-enhanced .carousel-btn-prev svg,
+      .product-carousel-enhanced .carousel-btn-next svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .product-carousel-enhanced .carousel-btn-prev:hover,
+      .product-carousel-enhanced .carousel-btn-next:hover {
+        transform: translateY(-50%) scale(1.1);
+        background: linear-gradient(135deg, #3F3F3F, #1a1a1a);
+        color: white;
+        border-color: #3F3F3F;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Carousel Indicators */
+      .carousel-indicators {
+        display: flex;
+        gap: 0.625rem;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      .carousel-indicators .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.2);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+      }
+
+      .carousel-indicators .indicator.active {
+        width: 28px;
+        border-radius: 5px;
+        background: #3F3F3F;
+      }
+
+      .carousel-indicators .indicator:hover {
+        background: #3F3F3F;
+        transform: scale(1.2);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .product-carousel-enhanced .carousel-btn-prev {
+          left: 10px;
+        }
+
+        .product-carousel-enhanced .carousel-btn-next {
+          right: 10px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .product-carousel-enhanced .carousel-track {
+          min-height: 520px;
+        }
+
+        .product-carousel-enhanced .carousel-card {
+          width: 90%;
+          max-width: 360px;
+          min-height: 460px;
+        }
+
+        .product-carousel-enhanced .carousel-card.prev,
+        .product-carousel-enhanced .carousel-card.next {
+          transform: scale(0.7) translateX(0);
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .product-carousel-enhanced .carousel-btn-prev,
+        .product-carousel-enhanced .carousel-btn-next {
+          width: 44px;
+          height: 44px;
+        }
+
+        .product-carousel-enhanced .carousel-btn-prev svg,
+        .product-carousel-enhanced .carousel-btn-next svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        .carousel-indicators {
+          margin-top: 1.5rem;
+        }
+
+        .product-carousel-enhanced .carousel-card-content {
+          padding: 1.25rem;
+          gap: 0.625rem;
+        }
+
+        .product-carousel-enhanced .carousel-card-image-wrapper {
+          height: 200px;
+        }
+
+        .product-icon {
+          width: 44px;
+          height: 44px;
+        }
+
+        .product-icon svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        .product-carousel-enhanced .carousel-card-title {
+          font-size: 1.375rem;
+        }
+
+        .product-carousel-enhanced .carousel-card-description {
+          font-size: 0.8125rem;
+          line-height: 1.5;
+        }
+
+        .product-cta-btn {
+          padding: 0.5rem 1rem;
+          font-size: 0.8125rem;
+        }
+
+        .product-carousel-enhanced .feature-tag {
+          padding: 0.3125rem 0.5rem;
+          font-size: 0.6875rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .product-carousel-enhanced .carousel-card {
+          width: 95%;
+          max-width: 340px;
+        }
+
+        .carousel-card-header {
+          top: 0.875rem;
+          right: 0.875rem;
+        }
+
+        .product-badge {
+          padding: 0.3125rem 0.625rem;
+          font-size: 0.625rem;
+        }
+
+        .product-carousel-enhanced .carousel-card-title {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+
+    <script>
+      // Enhanced Product Carousel with Indicators
+      document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.querySelector('.product-carousel-enhanced');
+        if (!carousel) return;
+
+        const cards = carousel.querySelectorAll('.carousel-card');
+        const prevBtn = carousel.querySelector('.carousel-btn-prev');
+        const nextBtn = carousel.querySelector('.carousel-btn-next');
+        const indicators = carousel.querySelectorAll('.carousel-indicators .indicator');
+        
+        if (cards.length === 0) return;
+
+        let currentIndex = 0;
+        const totalCards = cards.length;
+
+        // Update carousel state
+        function updateCarousel() {
+          cards.forEach((card, index) => {
+            card.classList.remove('active', 'prev', 'next');
+            
+            if (index === currentIndex) {
+              card.classList.add('active');
+            } else if (index === (currentIndex - 1 + totalCards) % totalCards) {
+              card.classList.add('prev');
+            } else if (index === (currentIndex + 1) % totalCards) {
+              card.classList.add('next');
+            }
+          });
+
+          // Update indicators
+          indicators.forEach((indicator, index) => {
+            if (index === currentIndex) {
+              indicator.classList.add('active');
+            } else {
+              indicator.classList.remove('active');
+            }
+          });
+        }
+
+        // Next slide
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % totalCards;
+          updateCarousel();
+        }
+
+        // Previous slide
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+          updateCarousel();
+        }
+
+        // Go to specific slide
+        function goToSlide(index) {
+          currentIndex = index;
+          updateCarousel();
+        }
+
+        // Event listeners
+        if (nextBtn) {
+          nextBtn.addEventListener('click', nextSlide);
+        }
+        
+        if (prevBtn) {
+          prevBtn.addEventListener('click', prevSlide);
+        }
+
+        // Indicator click events
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') prevSlide();
+          if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // Touch/Swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+          const swipeThreshold = 50;
+          const diff = touchStartX - touchEndX;
+
+          if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+              nextSlide();
+            } else {
+              prevSlide();
+            }
+          }
+        }
+
+        // Initialize
+        updateCarousel();
+      });
+    </script>
 
     <!-- Why Choose Us / Stats Section -->
     <section id="why-us" class="section-padding section-glass-bg">
@@ -926,7 +1593,7 @@
                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
               </svg>
             </div>
-            <div class="stat-number">150+</div>
+            <div class="stat-number">15+</div>
             <div class="stat-label">Projects Delivered</div>
           </div>
 
@@ -936,7 +1603,7 @@
                 <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
               </svg>
             </div>
-            <div class="stat-number">98%</div>
+            <div class="stat-number">100%</div>
             <div class="stat-label">Client Satisfaction</div>
           </div>
 
@@ -949,8 +1616,8 @@
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
               </svg>
             </div>
-            <div class="stat-number">50+</div>
-            <div class="stat-label">AI Experts</div>
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Expert Team Members</div>
           </div>
 
           <div class="stat-card stat-card-animated" data-index="3">
@@ -960,8 +1627,8 @@
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
             </div>
-            <div class="stat-number">10M+</div>
-            <div class="stat-label">Hours Saved</div>
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Hours Saved for Clients</div>
           </div>
         </div>
         </div>
@@ -1051,7 +1718,7 @@
     </script>
 
     <!-- Industries We Serve Section -->
-    <section id="industries" class="section-padding bg-light-gray">
+    <section id="industries" class="section-padding" data-cosmic="true">
       <div class="container">
         <h2 class="section-title animate-on-scroll">Industries We Serve</h2>
         <p class="section-subtitle animate-on-scroll">Specialized AI solutions for diverse sectors</p>
@@ -1427,7 +2094,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="section-padding testimonials-section">
+    <section id="testimonials" class="section-padding testimonials-section" data-cosmic="true">
       <div class="container">
         <div class="text-center mb-12">
           <div class="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium animate-on-scroll">
@@ -1785,7 +2452,6 @@
     <style>
       /* Testimonials Section Enhancements */
       .testimonials-section {
-        background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
         position: relative;
         overflow: hidden;
       }
@@ -2087,6 +2753,31 @@
       });
     </script>
 
+    <!-- Book a Meeting Section -->
+    <section id="book-meeting" class="section-padding" style="background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%); padding: 3rem 0;">
+      <div class="container">
+        <div class="text-center mb-6 max-w-3xl mx-auto animate-on-scroll">
+          <div class="inline-block mb-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
+            Let's Connect
+          </div>
+          <h2 class="section-title" style="margin-bottom: 0.75rem;">Book a Meeting</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">Schedule a free consultation to discuss how we can help transform your business with AI automation</p>
+        </div>
+        
+        <!-- Cal.com inline embed -->
+        <div class="animate-on-scroll" style="max-width: 900px; margin: 0 auto;">
+          <iframe 
+            src="https://cal.com/product-labs?embed=true&layout=month_view"
+            width="100%" 
+            height="550px" 
+            frameborder="0"
+            style="border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);background:white;"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="section-padding bg-dark cta-section">
       <!-- Gradient overlay for smooth transition into CTA section -->
@@ -2097,7 +2788,7 @@
           Let's discuss how Product Labs can help you leverage AI automation to work smarter, reduce costs, and unlock new growth opportunities.
         </p>
         <div class="animate-on-scroll">
-          <a href="/pages/contact.html" class="btn btn-light" style="padding: 1rem 2rem; font-size: 1.125rem;">Schedule a Free Consultation</a>
+          <a href="#book-meeting" class="btn btn-light" style="padding: 1rem 2rem; font-size: 1.125rem;" data-cal-link="product-labs" data-cal-config='{"layout":"month_view"}'>Schedule a Free Consultation</a>
         </div>
         <p class="animate-on-scroll" style="color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; margin-top: 1.5rem;">
           No commitment required • Free 30-minute consultation • Response within 24 hours
@@ -2114,6 +2805,38 @@
   <script src="/js/main.js"></script>
   <script type="module" src="/js/home.js"></script>
   <script src="/js/modules/technology-animation.js"></script>
+  <script src="/js/modules/cosmic-background-universal.js"></script>
+  
+  <!-- Cal.com Embed Script for Popup Buttons -->
+  <script type="text/javascript">
+    (function (C, A, L) { 
+      let p = function (a, ar) { a.q.push(ar); }; 
+      let d = C.document; 
+      C.Cal = C.Cal || function () { 
+        let cal = C.Cal; 
+        let ar = arguments; 
+        if (!cal.q) { 
+          cal.q = []; 
+        } 
+        cal.q.push(ar); 
+        return cal; 
+      }; 
+      let api = function () { 
+        let f = arguments; 
+        if (!C.Cal.q) { 
+          C.Cal.q = []; 
+        } 
+        p(C.Cal, arguments); 
+      }; 
+      let s = d.createElement("script"); 
+      s.async = 1; 
+      s.src = A + L; 
+      d.head.appendChild(s); 
+    })(window, "https://app.cal.com", "/embed/embed.js");
+    
+    // Initialize Cal.com for popup buttons
+    Cal("init");
+  </script>
 
 </body>
 </html>
