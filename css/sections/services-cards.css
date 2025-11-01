@@ -1,0 +1,239 @@
+/* ==========================================
+   SERVICES FEATURE CARDS - 2x2 Grid
+   Homepage Services Section Styling
+   ========================================== */
+
+/* Services Feature Grid - 2x2 Layout */
+.services-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Feature Service Card - Base Styles */
+.feature-service-card {
+  position: relative;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effect 6 - Staggered Entrance Animation */
+.feature-service-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.feature-service-card[data-index="0"].visible {
+  transition-delay: 0ms;
+}
+
+.feature-service-card[data-index="1"].visible {
+  transition-delay: 100ms;
+}
+
+.feature-service-card[data-index="2"].visible {
+  transition-delay: 200ms;
+}
+
+.feature-service-card[data-index="3"].visible {
+  transition-delay: 300ms;
+}
+
+/* Effect 1 - Lift Animation */
+.feature-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Wrapper - Full Container */
+.feature-card-image-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Effect 2 - Image stays grayscale, slightly brightens on hover */
+.feature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.9);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.feature-service-card:hover .feature-card-image {
+  filter: grayscale(100%) brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* Effect 3 - Overlay Brightness Change */
+.feature-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+
+.feature-service-card:hover .feature-card-overlay {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Content Layer */
+.feature-card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  color: white;
+}
+
+/* Professional Number Badge */
+.feature-number-badge {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-number-badge::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.badge-number {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effects for Badge */
+.feature-service-card:hover .feature-number-badge {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.feature-service-card:hover .feature-number-badge::before {
+  opacity: 1;
+}
+
+.feature-service-card:hover .badge-number {
+  transform: scale(1.1);
+}
+
+/* Card Title */
+.feature-card-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+/* Card Description */
+.feature-card-description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Effect 5 - Bottom Line Indicator */
+.feature-card-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: rgba(255, 255, 255, 0.7);
+  transition: width 0.5s ease;
+  z-index: 3;
+}
+
+.feature-service-card:hover .feature-card-indicator {
+  width: 100%;
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .services-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feature-service-card {
+    height: 280px;
+  }
+
+  .feature-card-title {
+    font-size: 1.25rem;
+  }
+
+  .feature-card-description {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Tablet Layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-feature-grid {
+    gap: 1.5rem;
+    max-width: 1200px;
+  }
+
+  .feature-service-card {
+    height: 280px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1399px) {
+  .services-feature-grid {
+    max-width: 1400px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+  .services-feature-grid {
+    max-width: 1600px;
+  }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1800px) {
+  .services-feature-grid {
+    max-width: 1800px;
+  }
+}

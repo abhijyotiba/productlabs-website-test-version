@@ -1,0 +1,155 @@
+/* ========================================
+   SCROLL ANIMATION STYLES
+   ======================================== */
+
+/* Stats Cards Animation */
+.stat-card-animated {
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Alternating top and bottom animations */
+.stat-card-animated[data-index="0"],
+.stat-card-animated[data-index="2"] {
+  transform: translateY(60px);
+}
+
+.stat-card-animated[data-index="1"],
+.stat-card-animated[data-index="3"] {
+  transform: translateY(-60px);
+}
+
+.stat-card-animated.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-card-animated[data-index="0"].visible {
+  transition-delay: 0ms;
+}
+
+.stat-card-animated[data-index="1"].visible {
+  transition-delay: 100ms;
+}
+
+.stat-card-animated[data-index="2"].visible {
+  transition-delay: 200ms;
+}
+
+.stat-card-animated[data-index="3"].visible {
+  transition-delay: 300ms;
+}
+
+/* Mobile fix for stat cards */
+@media (max-width: 768px) {
+  /* Reset all stat cards to come from bottom in mobile */
+  .stat-card-animated[data-index="0"],
+  .stat-card-animated[data-index="1"],
+  .stat-card-animated[data-index="2"],
+  .stat-card-animated[data-index="3"] {
+    transform: translateY(30px);
+  }
+
+  /* When visible, reset to no transform */
+  .stat-card-animated.visible {
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   INDUSTRIES GRID ANIMATION
+   ======================================== */
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.industry-card {
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Alternating entrance animations */
+.industry-card[data-index="0"] {
+  transform: translateX(-60px);
+}
+
+.industry-card[data-index="1"] {
+  transform: translateY(-60px);
+}
+
+.industry-card[data-index="2"] {
+  transform: translateX(60px);
+}
+
+.industry-card[data-index="3"] {
+  transform: translateX(-60px);
+}
+
+.industry-card[data-index="4"] {
+  transform: translateY(60px);
+}
+
+.industry-card[data-index="5"] {
+  transform: translateX(60px);
+}
+
+.industry-card.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.industry-card[data-index="0"].visible {
+  transition-delay: 0ms;
+}
+
+.industry-card[data-index="1"].visible {
+  transition-delay: 100ms;
+}
+
+.industry-card[data-index="2"].visible {
+  transition-delay: 200ms;
+}
+
+.industry-card[data-index="3"].visible {
+  transition-delay: 300ms;
+}
+
+.industry-card[data-index="4"].visible {
+  transition-delay: 400ms;
+}
+
+.industry-card[data-index="5"].visible {
+  transition-delay: 500ms;
+}
+
+@media (max-width: 1024px) {
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .industries-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reset all animations to come from left in mobile */
+  .industry-card[data-index="0"],
+  .industry-card[data-index="1"],
+  .industry-card[data-index="2"],
+  .industry-card[data-index="3"],
+  .industry-card[data-index="4"],
+  .industry-card[data-index="5"] {
+    transform: translateX(-60px);
+  }
+
+  /* When visible, reset to no transform */
+  .industry-card.visible {
+    transform: translate(0, 0);
+  }
+}

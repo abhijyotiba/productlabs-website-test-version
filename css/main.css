@@ -22,6 +22,10 @@
 @import './sections/cta.css';
 @import './sections/page-hero.css';
 @import './sections/technology-works.css';
+@import './sections/services-cards.css';
+@import './sections/products-carousel.css';
+@import './sections/carousels.css';
+@import './sections/animations-scroll.css';
 
 /* ========== Utilities ========== */
 @import './utilities.css';
