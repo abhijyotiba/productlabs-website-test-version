@@ -159,35 +159,38 @@
     </section>
 
     <!-- Features Comparison Section -->
-    <section class="section-padding bg-light-gray">
-      <div class="container">
-        <h2 class="section-title animate-on-scroll">Why Choose Our Products</h2>
-        <p class="section-subtitle animate-on-scroll">Built with cutting-edge technology and designed for real-world business challenges</p>
+    <section class="section-padding" style="position: relative; background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%); overflow: hidden;">
+      <!-- Cosmic Background Canvas -->
+      <canvas id="cosmicCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
+      
+      <div class="container" style="position: relative; z-index: 1;">
+        <h2 class="section-title animate-on-scroll" style="color: #ffffff;">Why Choose Our Products</h2>
+        <p class="section-subtitle animate-on-scroll" style="color: rgba(255, 255, 255, 0.8);">Built with cutting-edge technology and designed for real-world business challenges</p>
         
         <div class="services-grid products-features-grid">
-          <div class="info-card info-card-compact product-feature-card" data-index="0">
-            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1a1a1a; font-weight: 700;">Fast Deployment</h4>
-            <p style="color: #666666; font-size: 0.95rem; line-height: 1.7;">Get up and running in days, not months. Our products are designed for quick implementation with minimal disruption.</p>
+          <div class="info-card info-card-compact product-feature-card" data-index="0" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #ffffff; font-weight: 700;">Fast Deployment</h4>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.7;">Get up and running in days, not months. Our products are designed for quick implementation with minimal disruption.</p>
           </div>
-          <div class="info-card info-card-compact product-feature-card" data-index="1">
-            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1a1a1a; font-weight: 700;">Enterprise Security</h4>
-            <p style="color: #666666; font-size: 0.95rem; line-height: 1.7;">Bank-level security with SOC 2 compliance, end-to-end encryption, and regular security audits.</p>
+          <div class="info-card info-card-compact product-feature-card" data-index="1" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #ffffff; font-weight: 700;">Enterprise Security</h4>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.7;">Bank-level security with SOC 2 compliance, end-to-end encryption, and regular security audits.</p>
           </div>
-          <div class="info-card info-card-compact product-feature-card" data-index="2">
-            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1a1a1a; font-weight: 700;">Easy to Use</h4>
-            <p style="color: #666666; font-size: 0.95rem; line-height: 1.7;">Intuitive interfaces designed for business users, not just technical experts. Minimal training required.</p>
+          <div class="info-card info-card-compact product-feature-card" data-index="2" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #ffffff; font-weight: 700;">Easy to Use</h4>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.7;">Intuitive interfaces designed for business users, not just technical experts. Minimal training required.</p>
           </div>
-          <div class="info-card info-card-compact product-feature-card" data-index="3">
-            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1a1a1a; font-weight: 700;">Scalable</h4>
-            <p style="color: #666666; font-size: 0.95rem; line-height: 1.7;">Grow from startup to enterprise with our flexible, cloud-native architecture that scales with your needs.</p>
+          <div class="info-card info-card-compact product-feature-card" data-index="3" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #ffffff; font-weight: 700;">Scalable</h4>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.7;">Grow from startup to enterprise with our flexible, cloud-native architecture that scales with your needs.</p>
           </div>
-          <div class="info-card info-card-compact product-feature-card" data-index="4">
-            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1a1a1a; font-weight: 700;">Customizable</h4>
-            <p style="color: #666666; font-size: 0.95rem; line-height: 1.7;">Tailor every product to your specific workflows, branding, and business requirements.</p>
+          <div class="info-card info-card-compact product-feature-card" data-index="4" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #ffffff; font-weight: 700;">Customizable</h4>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.7;">Tailor every product to your specific workflows, branding, and business requirements.</p>
           </div>
-          <div class="info-card info-card-compact product-feature-card" data-index="5">
-            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #1a1a1a; font-weight: 700;">24/7 Support</h4>
-            <p style="color: #666666; font-size: 0.95rem; line-height: 1.7;">Round-the-clock support from our expert team, plus extensive documentation and training resources.</p>
+          <div class="info-card info-card-compact product-feature-card" data-index="5" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+            <h4 style="font-size: 1.25rem; margin-bottom: 1rem; color: #ffffff; font-weight: 700;">24/7 Support</h4>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.7;">Round-the-clock support from our expert team, plus extensive documentation and training resources.</p>
           </div>
         </div>
       </div>
@@ -336,6 +339,7 @@
 
   <!-- ========== Scripts ========== -->
   <script src="/js/main.js"></script>
+  <script src="/js/modules/cosmic-background-universal.js"></script>
 
 </body>
 </html>
