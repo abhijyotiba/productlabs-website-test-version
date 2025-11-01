@@ -267,7 +267,7 @@
             <!-- AWS -->
             <div class="info-card tech-provider-card">
               <div class="tech-logo-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" alt="AWS" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" alt="AWS">
               </div>
               <h3 class="tech-provider-name">Amazon Web Services</h3>
             </div>
@@ -275,7 +275,7 @@
             <!-- Google Cloud -->
             <div class="info-card tech-provider-card">
               <div class="tech-logo-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/1024px-Google_Cloud_logo.svg.png" alt="Google Cloud" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/1024px-Google_Cloud_logo.svg.png" alt="Google Cloud">
               </div>
               <h3 class="tech-provider-name">Google Cloud</h3>
             </div>
@@ -283,7 +283,7 @@
             <!-- Azure -->
             <div class="info-card tech-provider-card">
               <div class="tech-logo-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1024px-Microsoft_Azure.svg.png" alt="Microsoft Azure" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1024px-Microsoft_Azure.svg.png" alt="Microsoft Azure">
               </div>
               <h3 class="tech-provider-name">Microsoft Azure</h3>
             </div>
@@ -291,7 +291,7 @@
             <!-- Freshdesk -->
             <div class="info-card tech-provider-card">
               <div class="tech-logo-container">
-                <img src="/assets/other/Freshdesk.png" alt="Freshdesk" loading="lazy">
+                <img src="/assets/other/Freshdesk.png" alt="Freshdesk">
               </div>
               <h3 class="tech-provider-name">Freshdesk</h3>
             </div>
@@ -299,7 +299,7 @@
             <!-- VAPI -->
             <div class="info-card tech-provider-card">
               <div class="tech-logo-container">
-                <img src="/assets/other/vapi.png" alt="VAPI" loading="lazy">
+                <img src="/assets/other/vapi.png" alt="VAPI">
               </div>
               <h3 class="tech-provider-name">VAPI</h3>
             </div>
@@ -307,7 +307,7 @@
             <!-- ElevenLabs -->
             <div class="info-card tech-provider-card">
               <div class="tech-logo-container">
-                <img src="/assets/other/elevenlabs.png" alt="ElevenLabs" loading="lazy">
+                <img src="/assets/other/elevenlabs.png" alt="ElevenLabs">
               </div>
               <h3 class="tech-provider-name">ElevenLabs</h3>
             </div>
@@ -315,7 +315,7 @@
             <!-- Pinecone -->
             <div class="info-card tech-provider-card">
               <div class="tech-logo-container">
-                <img src="/assets/other/pinecone-icon.webp" alt="Pinecone" loading="lazy">
+                <img src="/assets/other/pinecone-icon.webp" alt="Pinecone">
               </div>
               <h3 class="tech-provider-name">Pinecone</h3>
             </div>
@@ -323,7 +323,7 @@
             <!-- Unsloth -->
             <div class="info-card tech-provider-card">
               <div class="tech-logo-container">
-                <img src="/assets/other/unsloth logo.png" alt="Unsloth" loading="lazy">
+                <img src="/assets/other/unsloth logo.png" alt="Unsloth">
               </div>
               <h3 class="tech-provider-name">Unsloth</h3>
             </div>
@@ -331,7 +331,7 @@
             <!-- OpenAI -->
             <div class="info-card tech-provider-card">
               <div class="tech-logo-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/1024px-OpenAI_Logo.svg.png" alt="OpenAI" loading="lazy">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/1024px-OpenAI_Logo.svg.png" alt="OpenAI">
               </div>
               <h3 class="tech-provider-name">OpenAI</h3>
             </div>
@@ -339,7 +339,7 @@
             <!-- Anthropic -->
             <div class="info-card tech-provider-card">
               <div class="tech-logo-container">
-                <img src="/assets/other/antropic.png" alt="Anthropic" loading="lazy">
+                <img src="/assets/other/antropic.png" alt="Anthropic">
               </div>
               <h3 class="tech-provider-name">Anthropic</h3>
             </div>
@@ -360,6 +360,14 @@
             const clone = card.cloneNode(true);
             carousel.appendChild(clone);
           });
+
+          // Mobile fix: Force repaint to ensure rendering
+          setTimeout(() => {
+            carousel.style.opacity = '0.99';
+            setTimeout(() => {
+              carousel.style.opacity = '1';
+            }, 10);
+          }, 100);
 
           // Pause on hover
           carousel.addEventListener('mouseenter', function() {
@@ -1289,6 +1297,14 @@
             const clone = slide.cloneNode(true);
             carousel.appendChild(clone);
           });
+
+          // Mobile fix: Force repaint to ensure rendering
+          setTimeout(() => {
+            carousel.style.opacity = '0.99';
+            setTimeout(() => {
+              carousel.style.opacity = '1';
+            }, 10);
+          }, 100);
         }
 
         if (pauseBtn && carousel) {

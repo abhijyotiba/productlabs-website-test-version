@@ -23,6 +23,11 @@
   gap: 1.5rem;
   animation: scroll-right 50s linear infinite;
   width: max-content;
+  /* Mobile fix: Force initial position and optimize rendering */
+  transform: translateX(0);
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .tech-carousel.paused {
@@ -116,6 +121,11 @@
   gap: 1.5rem;
   animation: scroll-left 60s linear infinite;
   width: max-content;
+  /* Mobile fix: Force initial position and optimize rendering */
+  transform: translateX(0);
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .testimonial-carousel.paused {
