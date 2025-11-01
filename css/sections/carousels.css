@@ -45,6 +45,9 @@
   text-align: center;
   padding: 2rem 1.5rem !important;
   transition: all 0.3s ease;
+  /* Mobile fix: ensure always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .tech-provider-card:hover {
@@ -59,6 +62,9 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+  /* Mobile fix: ensure always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .tech-logo-container img {
@@ -67,6 +73,9 @@
   width: auto;
   height: auto;
   object-fit: contain;
+  /* Mobile fix: ensure images always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Tech Provider Name */
@@ -133,6 +142,9 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  /* Mobile fix: ensure always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .testimonial-card-slide::before {
@@ -165,6 +177,9 @@
   gap: 1rem;
   padding: 1.75rem 1.75rem 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  /* Mobile fix: ensure always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .testimonial-avatar {
@@ -227,6 +242,9 @@
   padding: 1.5rem 1.75rem;
   margin: 0;
   position: relative;
+  /* Mobile fix: ensure always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .testimonial-quote::before {
@@ -247,6 +265,9 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0 1.75rem 1.75rem;
+  /* Mobile fix: ensure always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .testimonial-tags .tag {
@@ -317,6 +338,10 @@
   .tech-provider-card {
     flex: 0 0 200px;
     padding: 1.5rem 1rem !important;
+    /* Mobile fix: force visibility */
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
   }
 
   .tech-carousel {
@@ -326,20 +351,34 @@
 
   .tech-provider-name {
     font-size: 1rem;
+    /* Mobile fix: ensure text visible */
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .tech-logo-container {
     height: 50px;
+    /* Mobile fix: ensure container visible */
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .tech-logo-container img {
     max-width: 120px;
     max-height: 50px;
+    /* Mobile fix: ensure images visible */
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
   }
 
   /* Testimonials */
   .testimonial-card-slide {
     flex: 0 0 340px;
+    /* Mobile fix: force visibility */
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
   }
 
   .testimonial-carousel {
@@ -348,15 +387,24 @@
 
   .testimonial-header {
     padding: 1.5rem 1.5rem 0.875rem;
+    /* Mobile fix: ensure header visible */
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .testimonial-quote {
     padding: 1.25rem 1.5rem;
     font-size: 0.875rem;
+    /* Mobile fix: ensure quote visible */
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .testimonial-tags {
     padding: 0 1.5rem 1.5rem;
+    /* Mobile fix: ensure tags visible */
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 
@@ -382,5 +430,8 @@
   /* Testimonials */
   .testimonial-card-slide {
     flex: 0 0 300px;
+    /* Mobile fix: maintain visibility */
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
