@@ -1305,6 +1305,16 @@
               carousel.style.opacity = '1';
             }, 10);
           }, 100);
+
+          // Mobile fix: Force all testimonial cards to render
+          setTimeout(() => {
+            const allSlides = carousel.querySelectorAll('.testimonial-card-slide');
+            allSlides.forEach((slide, index) => {
+              setTimeout(() => {
+                slide.style.transform = 'translateZ(0)';
+              }, index * 10);
+            });
+          }, 150);
         }
 
         if (pauseBtn && carousel) {
