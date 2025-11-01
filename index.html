@@ -354,32 +354,10 @@
         const carousel = document.getElementById('techCarousel');
 
         if (carousel) {
-          // MOBILE FIX: Force visibility of all cards immediately
-          const allCards = carousel.querySelectorAll('.tech-provider-card');
-          allCards.forEach(card => {
-            card.style.opacity = '1';
-            card.style.visibility = 'visible';
-            
-            // Force images to be visible
-            const img = card.querySelector('img');
-            if (img) {
-              img.style.opacity = '1';
-              img.style.visibility = 'visible';
-            }
-          });
-
           // Clone tech cards for seamless infinite loop
           const techCards = Array.from(carousel.children);
           techCards.forEach(card => {
             const clone = card.cloneNode(true);
-            // MOBILE FIX: Ensure clones are also visible
-            clone.style.opacity = '1';
-            clone.style.visibility = 'visible';
-            const cloneImg = clone.querySelector('img');
-            if (cloneImg) {
-              cloneImg.style.opacity = '1';
-              cloneImg.style.visibility = 'visible';
-            }
             carousel.appendChild(clone);
           });
 
@@ -1305,38 +1283,10 @@
         let isPaused = false;
 
         if (carousel) {
-          // MOBILE FIX: Force visibility of all testimonial cards immediately
-          const allSlides = carousel.querySelectorAll('.testimonial-card-slide');
-          allSlides.forEach(slide => {
-            slide.style.opacity = '1';
-            slide.style.visibility = 'visible';
-            
-            // Force all child elements to be visible
-            const header = slide.querySelector('.testimonial-header');
-            const quote = slide.querySelector('.testimonial-quote');
-            const tags = slide.querySelector('.testimonial-tags');
-            
-            if (header) {
-              header.style.opacity = '1';
-              header.style.visibility = 'visible';
-            }
-            if (quote) {
-              quote.style.opacity = '1';
-              quote.style.visibility = 'visible';
-            }
-            if (tags) {
-              tags.style.opacity = '1';
-              tags.style.visibility = 'visible';
-            }
-          });
-
           // Clone testimonials for seamless infinite loop
           const testimonialSlides = Array.from(carousel.children);
           testimonialSlides.forEach(slide => {
             const clone = slide.cloneNode(true);
-            // MOBILE FIX: Ensure clones are also visible
-            clone.style.opacity = '1';
-            clone.style.visibility = 'visible';
             carousel.appendChild(clone);
           });
         }

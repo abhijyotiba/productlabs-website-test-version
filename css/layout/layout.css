@@ -381,6 +381,27 @@ section {
     max-width: 100%;
     overflow-x: hidden;
   }
+
+  /* Fix for infinite scrolling carousels on mobile */
+  .tech-carousel-wrapper,
+  .testimonial-carousel-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .tech-carousel,
+  .testimonial-carousel {
+    overflow-x: hidden;
+  }
+
+  /* Prevent sections with carousels from causing horizontal scroll */
+  #tech-stack,
+  #testimonials {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
 }
 
 /* ========== Aspect Ratios ========== */
