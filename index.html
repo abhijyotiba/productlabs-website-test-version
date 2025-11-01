@@ -138,7 +138,7 @@
         <p class="hero-subtitle">We build custom AI solutions and provide expert consultation to streamline operations, reduce costs, and unlock new opportunities for growth.</p>
         <div class="hero-buttons">
           <a href="/pages/products.html" class="btn btn-light">Explore Our Products</a>
-          <a href="#" class="btn btn-dark" data-cal-link="product-labs" data-cal-config='{"layout":"month_view"}'>Schedule Consultation</a>
+          <a href="#book-meeting" class="btn btn-dark" data-cal-link="product-labs" data-cal-config='{"layout":"month_view"}'>Schedule Consultation</a>
         </div>
       </div>
       <!-- Scroll Indicator -->
@@ -1430,7 +1430,18 @@
     })(window, "https://app.cal.com", "/embed/embed.js");
     
     // Initialize Cal.com for popup buttons
-    Cal("init");
+    Cal("init", {origin:"https://app.cal.com"});
+    
+    // Ensure Cal.com handles the popup correctly
+    Cal("ui", {
+      styles: {
+        branding: {
+          brandColor: "#3F3F3F"
+        }
+      },
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
   </script>
 
 </body>
