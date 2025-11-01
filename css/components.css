@@ -458,12 +458,7 @@
   margin-top: 3rem;
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
+
 
 /* ========== Section Title ========== */
 .section-title {

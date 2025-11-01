@@ -1376,13 +1376,14 @@
 
       @media (max-width: 768px) {
         .product-carousel-enhanced .carousel-track {
-          min-height: 520px;
+          min-height: 580px;
         }
 
         .product-carousel-enhanced .carousel-card {
           width: 90%;
           max-width: 360px;
-          min-height: 460px;
+          min-height: auto;
+          height: auto;
         }
 
         .product-carousel-enhanced .carousel-card.prev,
@@ -1410,44 +1411,55 @@
 
         .product-carousel-enhanced .carousel-card-content {
           padding: 1.25rem;
-          gap: 0.625rem;
+          gap: 0.5rem;
         }
 
         .product-carousel-enhanced .carousel-card-image-wrapper {
-          height: 200px;
+          height: 180px;
         }
 
         .product-icon {
-          width: 44px;
-          height: 44px;
+          width: 40px;
+          height: 40px;
         }
 
         .product-icon svg {
-          width: 22px;
-          height: 22px;
+          width: 20px;
+          height: 20px;
         }
 
         .product-carousel-enhanced .carousel-card-title {
-          font-size: 1.375rem;
+          font-size: 1.25rem;
         }
 
         .product-carousel-enhanced .carousel-card-description {
           font-size: 0.8125rem;
           line-height: 1.5;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
         }
 
         .product-cta-btn {
           padding: 0.5rem 1rem;
           font-size: 0.8125rem;
+          margin-top: 0.25rem;
         }
 
         .product-carousel-enhanced .feature-tag {
           padding: 0.3125rem 0.5rem;
           font-size: 0.6875rem;
         }
+
+        .product-carousel-enhanced .carousel-card-features {
+          gap: 0.3rem;
+        }
       }
 
       @media (max-width: 480px) {
+        .product-carousel-enhanced .carousel-track {
+          min-height: 560px;
+        }
+
         .product-carousel-enhanced .carousel-card {
           width: 95%;
           max-width: 340px;
@@ -1463,8 +1475,52 @@
           font-size: 0.625rem;
         }
 
+        .product-carousel-enhanced .carousel-card-content {
+          padding: 1rem;
+          gap: 0.5rem;
+        }
+
+        .product-carousel-enhanced .carousel-card-image-wrapper {
+          height: 160px;
+        }
+
+        .product-icon {
+          width: 36px;
+          height: 36px;
+        }
+
+        .product-icon svg {
+          width: 18px;
+          height: 18px;
+        }
+
         .product-carousel-enhanced .carousel-card-title {
-          font-size: 1.25rem;
+          font-size: 1.125rem;
+        }
+
+        .product-carousel-enhanced .carousel-card-description {
+          font-size: 0.75rem;
+          line-height: 1.4;
+        }
+
+        .product-cta-btn {
+          padding: 0.5rem 0.875rem;
+          font-size: 0.75rem;
+        }
+
+        .btn-arrow {
+          width: 14px;
+          height: 14px;
+        }
+
+        .product-carousel-enhanced .feature-tag {
+          padding: 0.25rem 0.5rem;
+          font-size: 0.625rem;
+        }
+
+        .tag-icon {
+          width: 6px;
+          height: 6px;
         }
       }
     </style>
@@ -1628,9 +1684,8 @@
               </svg>
             </div>
             <div class="stat-number">500+</div>
-            <div class="stat-label">Hours Saved for Clients</div>
+            <div class="stat-label">Hours Saved</div>
           </div>
-        </div>
         </div>
       </div>
     </section>
