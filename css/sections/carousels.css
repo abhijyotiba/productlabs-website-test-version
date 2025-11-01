@@ -196,8 +196,8 @@
   /* Mobile fix: ensure always visible */
   opacity: 1 !important;
   visibility: visible !important;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-avatar {
@@ -212,9 +212,6 @@
   color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
-  /* Mobile fix: ensure SVG renders */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
 }
 
 .testimonial-card-slide:hover .testimonial-avatar {
@@ -224,6 +221,9 @@
 .testimonial-avatar svg {
   width: 28px;
   height: 28px;
+  /* Mobile fix: ensure SVG icon visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .testimonial-info {
@@ -236,12 +236,18 @@
   font-weight: 700;
   color: #1a1a1a;
   margin: 0 0 0.25rem 0;
+  /* Mobile fix: ensure text visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .testimonial-title {
   font-size: 0.875rem;
   color: #666666;
   margin: 0;
+  /* Mobile fix: ensure text visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .testimonial-rating {
@@ -253,6 +259,9 @@
 .testimonial-rating .star {
   font-size: 1rem;
   color: #fbbf24;
+  /* Mobile fix: ensure stars visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Testimonial Quote */
@@ -266,8 +275,7 @@
   /* Mobile fix: ensure always visible */
   opacity: 1 !important;
   visibility: visible !important;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  z-index: 1;
 }
 
 .testimonial-quote::before {
@@ -291,8 +299,8 @@
   /* Mobile fix: ensure always visible */
   opacity: 1 !important;
   visibility: visible !important;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-tags .tag {
@@ -304,6 +312,9 @@
   font-weight: 600;
   border-radius: 6px;
   transition: all 0.3s ease;
+  /* Mobile fix: ensure tags visible */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .testimonial-card-slide:hover .testimonial-tags .tag {
