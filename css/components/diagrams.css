@@ -1,0 +1,316 @@
+/* ============================================
+   Technical Diagrams Styles
+   For Services Page Architecture Visuals
+   ============================================ */
+
+/* Diagrams Grid */
+.diagrams-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.full-width-diagram {
+    grid-column: 1 / -1;
+}/* Individual Diagram Card */
+.diagram-card {
+  background: var(--color-bg-white);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Staggered animation */
+.diagram-card[data-index="0"] { transition-delay: 0ms; }
+.diagram-card[data-index="1"] { transition-delay: 150ms; }
+.diagram-card[data-index="2"] { transition-delay: 300ms; }
+.diagram-card[data-index="3"] { transition-delay: 450ms; }
+
+.diagram-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.diagram-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.diagram-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* ============================================
+   Diagram 1: Comparison Table
+   ============================================ */
+
+.comparison-table {
+  width: 100%;
+}
+
+.comparison-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.comparison-col {
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 0.75rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+  color: #1a1a1a;
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.comparison-cell {
+  padding: 0.875rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.comparison-cell.curious {
+  background: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.comparison-cell.first {
+  background: rgba(34, 197, 94, 0.1);
+  color: #15803d;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.comparison-row:hover .comparison-cell {
+  transform: scale(1.02);
+}
+
+/* ============================================
+   Diagram 2: Architecture Stack
+   ============================================ */
+
+.architecture-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.arch-layer {
+  padding: 1.25rem 1rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.layer-label {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  margin-bottom: 0.25rem;
+}
+
+.layer-description {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.layer-1 {
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  color: #5b21b6;
+}
+
+.layer-2 {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+}
+
+.layer-3 {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+}
+
+.layer-4 {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+}
+
+.layer-5 {
+  background: linear-gradient(135deg, #e5e5e5 0%, #d4d4d4 100%);
+  color: #1a1a1a;
+}
+
+.arch-layer:hover {
+  transform: translateX(8px);
+  border-color: currentColor;
+}
+
+.arch-arrow {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #666;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ============================================
+   Diagram 3: RAG Pipeline
+   ============================================ */
+
+.rag-pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.rag-node {
+  padding: 0.75rem 1rem;
+  background: #f5f5f5;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+.rag-node:hover {
+  transform: scale(1.05);
+  background: #e8e8e8;
+}
+
+.highlight-node {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.validation-node {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: #f59e0b;
+  color: #92400e;
+  font-weight: 700;
+}
+
+.rag-arrow {
+  font-size: 1.25rem;
+  color: #666;
+  font-weight: 700;
+}
+
+.rag-note {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-left: 4px solid #f59e0b;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #78350f;
+}
+
+.rag-note strong {
+  color: #92400e;
+  font-weight: 700;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .diagrams-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .diagram-card {
+    padding: 1.5rem;
+  }
+
+  .flow-split {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .diagram-card {
+    padding: 1.25rem;
+  }
+
+  .diagram-title {
+    font-size: 1.125rem;
+  }
+
+  .comparison-cell {
+    font-size: 0.75rem;
+    padding: 0.625rem;
+  }
+
+  .arch-layer {
+    padding: 1rem 0.75rem;
+  }
+
+  .layer-label {
+    font-size: 0.875rem;
+  }
+
+  .layer-description {
+    font-size: 0.6875rem;
+  }
+
+  .rag-pipeline {
+    gap: 0.5rem;
+  }
+
+  .rag-node {
+    font-size: 0.75rem;
+    padding: 0.625rem 0.75rem;
+  }
+
+  .rag-arrow {
+    font-size: 1rem;
+  }
+
+  .rag-note {
+    font-size: 0.75rem;
+    padding: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comparison-row {
+    gap: 0.5rem;
+  }
+
+  .comparison-cell {
+    font-size: 0.6875rem;
+    padding: 0.5rem;
+  }
+
+}

@@ -17,6 +17,7 @@
 /* ========== Components ========== */
 @import './components/buttons.css';
 @import './components/cards.css';
+@import './components/diagrams.css';
 
 /* ========== Sections ========== */
 @import './sections/cta.css';
@@ -26,6 +27,8 @@
 @import './sections/products-carousel.css';
 @import './sections/carousels.css';
 @import './sections/animations-scroll.css';
+@import './sections/ai-first-principles.css';
+@import './sections/about-enhancements.css';
 
 /* ========== Utilities ========== */
 @import './utilities.css';
