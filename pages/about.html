@@ -233,11 +233,328 @@
     <section class="section-padding">
       <div class="container">
         <h2 class="section-title animate-on-scroll">Meet Our Team</h2>
+        <p class="section-subtitle animate-on-scroll">Highly skilled professionals driving innovation and excellence</p>
+        
+        <!-- Generalized Team Expertise Grid -->
+        <div class="team-expertise-grid">
+          
+          <!-- Business Analysts & Strategists -->
+          <div class="expertise-card animate-on-scroll" data-expertise-index="0">
+            <div class="expertise-icon-wrapper">
+              <svg class="expertise-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <h3 class="expertise-title">Business Analysts & Strategists</h3>
+            <p class="expertise-description">
+              Our strategists work closely with you to understand your unique challenges and opportunities. They translate business needs into actionable AI solutions, ensuring every project delivers measurable value and aligns with your long-term vision.
+            </p>
+            <ul class="expertise-skills">
+              <li>Business Process Analysis</li>
+              <li>ROI & Impact Assessment</li>
+              <li>Strategic Planning</li>
+              <li>Requirements Engineering</li>
+            </ul>
+          </div>
+
+          <!-- AI/ML Engineers & Developers -->
+          <div class="expertise-card animate-on-scroll" data-expertise-index="1">
+            <div class="expertise-icon-wrapper">
+              <svg class="expertise-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+                <line x1="12" y1="2" x2="12" y2="22"></line>
+              </svg>
+            </div>
+            <h3 class="expertise-title">AI/ML Engineers & Developers</h3>
+            <p class="expertise-description">
+              Our engineering team brings deep expertise in artificial intelligence, machine learning, and modern software development. They architect and build intelligent systems that are scalable, reliable, and production-ready from day one.
+            </p>
+            <ul class="expertise-skills">
+              <li>AI/ML Model Development</li>
+              <li>System Architecture</li>
+              <li>Full-Stack Development</li>
+              <li>Cloud Infrastructure</li>
+            </ul>
+          </div>
+
+          <!-- Implementation Specialists -->
+          <div class="expertise-card animate-on-scroll" data-expertise-index="2">
+            <div class="expertise-icon-wrapper">
+              <svg class="expertise-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"></path>
+              </svg>
+            </div>
+            <h3 class="expertise-title">Implementation Specialists</h3>
+            <p class="expertise-description">
+              Our implementation team ensures seamless integration of AI solutions into your existing workflows. They provide hands-on training, continuous support, and ongoing optimization to maximize adoption and long-term success.
+            </p>
+            <ul class="expertise-skills">
+              <li>System Integration</li>
+              <li>User Training & Support</li>
+              <li>Performance Optimization</li>
+              <li>Continuous Improvement</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="team-cta-section">
+          <p class="team-cta-text">
+            Our multidisciplinary team works collaboratively to deliver end-to-end AI solutions that transform how you do business.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Team Expertise Grid Styles */
+      .team-expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        margin-top: 3rem;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .expertise-card {
+        background: var(--color-bg-white);
+        border-radius: 16px;
+        padding: 2.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .expertise-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .expertise-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .expertise-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      /* Staggered entrance animations */
+      .expertise-card[data-expertise-index="0"] {
+        transform: translateX(-60px);
+      }
+
+      .expertise-card[data-expertise-index="1"] {
+        transform: translateY(60px);
+      }
+
+      .expertise-card[data-expertise-index="2"] {
+        transform: translateX(60px);
+      }
+
+      .expertise-card.visible {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+
+      .expertise-card[data-expertise-index="0"].visible {
+        transition-delay: 0ms;
+      }
+
+      .expertise-card[data-expertise-index="1"].visible {
+        transition-delay: 150ms;
+      }
+
+      .expertise-card[data-expertise-index="2"].visible {
+        transition-delay: 300ms;
+      }
+
+      .expertise-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .expertise-card:hover .expertise-icon-wrapper {
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .expertise-icon {
+        color: var(--color-primary);
+        transition: all 0.3s ease;
+      }
+
+      .expertise-card:hover .expertise-icon {
+        color: var(--color-secondary);
+        transform: scale(1.1);
+      }
+
+      .expertise-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        color: var(--color-text-dark);
+        text-align: center;
+      }
+
+      .expertise-description {
+        color: var(--color-text-muted);
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .expertise-skills {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+
+      .expertise-skills li {
+        font-size: 0.875rem;
+        color: var(--color-text-dark);
+        padding: 0.5rem 0.75rem;
+        background: var(--color-bg-light-gray);
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .expertise-card:hover .expertise-skills li {
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+        color: var(--color-primary);
+      }
+
+      .team-cta-section {
+        margin-top: 4rem;
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));
+        border-radius: 16px;
+        border: 1px solid rgba(99, 102, 241, 0.1);
+      }
+
+      .team-cta-text {
+        font-size: 1.125rem;
+        color: var(--color-text-dark);
+        line-height: 1.7;
+        max-width: 800px;
+        margin: 0 auto;
+        font-weight: 500;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .team-expertise-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          max-width: 600px;
+        }
+
+        .expertise-card[data-expertise-index="0"],
+        .expertise-card[data-expertise-index="1"],
+        .expertise-card[data-expertise-index="2"] {
+          transform: translateY(40px);
+        }
+
+        .expertise-card.visible {
+          transform: translate(0, 0);
+        }
+
+        .expertise-skills {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .expertise-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .expertise-title {
+          font-size: 1.25rem;
+        }
+
+        .expertise-description {
+          font-size: 0.95rem;
+        }
+
+        .team-cta-section {
+          padding: 1.5rem;
+        }
+
+        .team-cta-text {
+          font-size: 1rem;
+        }
+      }
+    </style>
+
+    <script>
+      // Animate expertise cards on scroll
+      document.addEventListener('DOMContentLoaded', function() {
+        const expertiseCards = document.querySelectorAll('.expertise-card');
+        
+        const observerOptions = {
+          threshold: 0.15,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            } else {
+              entry.target.classList.remove('visible');
+            }
+          });
+        }, observerOptions);
+
+        expertiseCards.forEach(card => {
+          observer.observe(card);
+        });
+      });
+    </script>
+
+    <!-- ========== COMMENTED OUT: Individual Team Member Cards ========== -->
+    <!--
+    <section class="section-padding">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Meet Our Team</h2>
         <p class="section-subtitle animate-on-scroll">The talented people behind Product Labs</p>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 3rem; justify-content: center; max-width: 900px; margin-left: auto; margin-right: auto;">
           
-          <!-- Team Member 1 - CEO -->
           <div class="animate-on-scroll" style="
             background: var(--color-bg-white);
             border-radius: 16px;
@@ -257,7 +574,6 @@
               Leading Product Labs with a vision to transform businesses through AI automation and innovation.
             </p>
             
-            <!-- Contact Links -->
             <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0, 0, 0, 0.08);">
               <a href="mailto:dev@productlabs.us" style="
                 display: inline-flex;
@@ -297,7 +613,6 @@
             </div>
           </div>
 
-          <!-- Team Member 2 - CTO -->
           <div class="animate-on-scroll" style="
             background: var(--color-bg-white);
             border-radius: 16px;
@@ -317,7 +632,6 @@
               Building cutting-edge AI solutions with expertise in machine learning and automation technologies.
             </p>
             
-            <!-- Contact Links -->
             <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0, 0, 0, 0.08);">
               <a href="mailto:abhi@productlabs.us" style="
                 display: inline-flex;
@@ -360,6 +674,8 @@
         </div>
       </div>
     </section>
+    -->
+    <!-- ========== END COMMENTED OUT SECTION ========== -->
 
     <!-- Technical Insights Section -->
     <section class="section-padding tech-insights-section" data-cosmic="true">
